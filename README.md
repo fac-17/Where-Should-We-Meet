@@ -81,8 +81,5 @@ QA - Georgia (assist by Reuben)
 ## Stretch Goals
 - Add events to calendar.
 - Link to functional mapping app.
-- ThinkBig-OutlinesOfAppImpact.md
+- repo -> ThinkBig-OutlinesOfAppImpact.md
 - Autofill 
-- Swipe Tinder Style 
-- Show time & price
-- Display route
