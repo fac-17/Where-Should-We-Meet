@@ -10,14 +10,14 @@ As a user, I want to find a convenient, suitable place to meet my friend in
 an easy and unanimous way. 
 
 ### Supporting User Journey 
-As a user, I want to understand what this app is doing. 
-As a user, I want to be able to create an event that suits the occasion.
-As a user, I want to be able to invite the person I'm meeting to the app.
-As a user, I want to find a location that is half way between me and my friend(s). 
-As a user, I want to be shown my travel and arrival time.
-As a user, I want to be given a variety of venue options to choose from.
-As a user, I would like to be able to filter my results to fit my budget
-As a user, I want to choose between different route/transport options to get to the venue. 
+- As a user, I want to understand what this app is doing. 
+- As a user, I want to be able to create an event that suits the occasion.
+- As a user, I want to be able to invite the person I'm meeting to the app.
+- As a user, I want to find a location that is half way between me and my friend(s). 
+- As a user, I want to be shown my travel and arrival time.
+- As a user, I want to be given a variety of venue options to choose from.
+- As a user, I would like to be able to filter my results to fit my budget.
+- As a user, I want to choose between different route/transport options to get to the venue. 
 
 ### User Stories 
 **Onboarding Page**
