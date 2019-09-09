@@ -1,0 +1,34 @@
+{
+  "name": "where-should-we-meet",
+  "version": "1.0.0",
+  "description": "Initial idea [Where should we meet? #7](https://github.com/fac-17/student-project-ideas/issues/7#issue-475546550) ## Overall and solutions/inspirations ![](https://i.imgur.com/xJ861yL.png) ![](https://i.imgur.com/dKNKF8o.png)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "tape tests/*.js | tap-spec",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac-17/Where-Should-We-Meet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-17/Where-Should-We-Meet/issues"
+  },
+  "homepage": "https://github.com/fac-17/Where-Should-We-Meet#readme",
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "nodemon": "^1.19.2",
+    "supertest": "^4.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "nock": "^11.3.3"
+  }
+}
