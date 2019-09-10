@@ -4,17 +4,18 @@ const geolib = require("geolib");
 
 const postcodeA = "N43HR";
 const postcodeB = "W42LJ";
+let resultArray;
 const convertPostcode = postcode => {
-  return cb =>
+  return whenTaskDone =>
     apiRequest(`https://api.postcodes.io/postcodes/${postcode}`, (err, res) => {
       if (err) {
-        cb(err);
+        whenTaskDone(err);
       } else {
         const responseObj = JSON.parse(res);
         const longitude = responseObj.body.result.longitude;
         const latitude = responseObj.body.result.latitude;
         const coords = { longitude, latitude };
-        cb(null, coords);
+        whenTaskDone(null, coords);
       }
     });
 };
@@ -23,33 +24,31 @@ const postcodefuncA = convertPostcode(postcodeA);
 const postcodefuncB = convertPostcode(postcodeB);
 const tasksArr = [postcodefuncA, postcodefuncB];
 
-const parallelCoordinateFinder = (tasks, callback) => {
+const parallelCoordinateFinder = (tasks, whenAllTasksFinished) => {
   let counter = 0;
-  let hasFailed = false;
   let resultArray = [];
-  tasks.forEach((func, i) => {
-    func((err, res) => {
+  tasks.forEach((task, i) => {
+    task((err, res) => {
       //the following code is only run when the response from our api is ready
       //if successful res would be our coords object
       counter += 1;
       if (err) {
-        hasFailed = true;
-        callback(err);
+        whenAllTasksFinished(err);
         return;
       }
       resultArray[i] = res;
       if (counter === tasksArr.length) {
-        callback(null, resultArray);
+        whenAllTasksFinished(null, resultArray);
       }
     });
   });
 };
 
-parallelCoordinateFinder(tasksArr, (err, res) => {
+parallelCoordinateFinder(tasksArr, (err, resultCoordsArr) => {
   if (err) {
     console.log(err);
   } else {
-    console.log(res);
+    console.log(resultCoordsArr);
   }
 });
 
