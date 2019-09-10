@@ -22,14 +22,17 @@
   "homepage": "https://github.com/fac-17/Where-Should-We-Meet#readme",
   "devDependencies": {
     "eslint": "^6.3.0",
-    "jshint": "^2.10.2",
     "nodemon": "^1.19.2",
     "supertest": "^4.0.2",
     "tap-spec": "^5.0.0",
     "tape": "^4.11.0"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "dotenv": "^8.1.0",
-    "nock": "^11.3.3"
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "nock": "^11.3.3",
+    "serve-favicon": "^2.5.0"
   }
 }
