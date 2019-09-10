@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "dotenv": "^8.1.0",
+    "geolib": "^3.0.4",
     "nock": "^11.3.3"
   }
 }
