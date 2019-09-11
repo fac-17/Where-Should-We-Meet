@@ -2,10 +2,16 @@ var currentTab = 0;
 showTab(currentTab);
 
 const nextButton = document.querySelector(".button-next");
-nextButton.addEventListener("click", nextInput);
-
 const prevButton = document.querySelector(".button-previous");
+const userInputNames = document.querySelectorAll(".user-input-name");
+
+nextButton.addEventListener("click", nextInput);
 prevButton.addEventListener("click", prevInput);
+
+function updateName() {
+  const friendName = document.querySelector("#friendName").value;
+  userInputNames.forEach(name => (name.textContent = friendName));
+}
 
 function showTab(n) {
   const labelArray = document.querySelectorAll(".user-input");
@@ -22,12 +28,14 @@ function showTab(n) {
   } else {
     document.querySelector(".button-next").textContent = "Next Step";
   }
+  if (n === 3) {
+    updateName();
+  }
   fixStepIndicator(n);
 }
 
 function nextInput(e) {
   e.preventDefault();
-  console.log("currentTab", currentTab);
   const labelArray = document.querySelectorAll(".user-input");
 
   if (!validateForm()) return false;
