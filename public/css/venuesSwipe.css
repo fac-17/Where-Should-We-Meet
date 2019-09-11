@@ -16,7 +16,8 @@ body {
   height: 50vw;
   max-height: 100vh;
   border: 2px solid red;
-  transform: translate(calc(var(--i, 2) / var(--n) * -100%));
+  transform: translate(calc(var(--i, 0) / var(--n) * -100%));
+  transition: transform 0.3s ease-out;
 }
 
 .swipe-container img {
