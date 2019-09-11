@@ -1,0 +1,16 @@
+.swipe-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50vw;
+  max-height: 100vh;
+  overflow-y: hidden;
+  --n: 1;
+  width: calc(100% / var(--n) * 100%);
+}
+
+.swipe-container img {
+  min-width: 100%;
+  width: 100%;
+  width: calc(100% / var(--n));
+}
