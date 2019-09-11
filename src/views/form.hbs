@@ -5,36 +5,58 @@
 </header>
 
 <main>
-
-  <form class="" method="POST" action="#">
-    <label>
+  <form class="user-form">
+    <div class="user-input">
       <h2>What's your name?</h2>
-      <input class="" type="text" name="first-user-name" placeholder="John" required>
-    </label>
-
-
-    <label for="first-user-location">What's your location?</label>
-    <input class="" type="text" name="first-user-location" placeholder="SW1A 1AA" required>
-
-    <label class="second-user-name">What's your friend's name?</label>
-    <input class="" type="text" name="second-user-name" placeholder="Jane" required>
-
-    <label class="second-user-location">What's [your friend's] location?</label>
-    <input class="" type="text" name="second-user-location" placeholder="SW1A 2AA" required>
-    <label for="time-to-meet">When do you want to meet?</label>
-    <input class="" type="date" name="time-to-meet" required>
-    <input class="" type="time" name="time-to-meet" required>
-    <label for="type-of-event">What do you want to do?</label>
-    <div name="type-of-event">
-      <input class="" id="entertainment" type="radio" name="type-of-event" placeholder="" required>
-      <label for="entertainment">We want to be entertained!</label>
-      <input class="" id="restaurant" type="radio" name="type-of-event" placeholder="" required>
-      <label for="restaurant">We want to enjoy a nice meal.</label>
-      <input class="" id="nightlife" type="radio" name="type-of-event" placeholder="" required>
-      <label for="nightlife">We want to party!</label>
-      <input class="" id="coffee" type="radio" name="type-of-event" placeholder="" required>
-      <label for="coffee">We want to have coffee.</label>
+      <input type="text" placeholder="John" name="userName" />
     </div>
-  </form>
 
+    <div class="user-input">
+      <h2>What's your location?</h2>
+      <input type="text" placeholder="SW1A 1AA" name="postcode" />
+    </div>
+
+    <div class="user-input">
+      <h2>What's your friend's name?</h2>
+      <input type="text" placeholder="Jane" name="friendName" />
+    </div>
+
+    <div class="user-input">
+      <h2>What's [your friend's] location?</h2>
+      <input type="text" placeholder="SW1A 2AA" name="friendPostcode" />
+    </div>
+
+    <div class="user-input">
+      <h2>When do you want to meet?</h2>
+      <input type="date" name="date" />
+      <input type="time" name="time" />
+    </div>
+
+    <div class="user-input">
+      <h2>What do you want to do?</h2>
+      <div>
+        <input id="entertainment" type="radio" placeholder="" name="entertainment" />
+        <label for="entertainment">We want to be entertained!</label>
+
+        <input id="restaurant" type="radio" placeholder="" name="restaurant" />
+        <label for="restaurant">We want to enjoy a nice meal.</label>
+        <input id="nightlife" type="radio" placeholder="" name="nightlife" />
+        <label for="nightlife">We want to party!</label>
+        <input id="coffee" type="radio" placeholder="" name="coffee" />
+        <label for="coffee">We want to have coffee.</label>
+      </div>
+    </div>
+    <div style="overflow:auto;">
+      <div style="float:right;">
+        <button class="button-previous">
+          Go Back
+        </button>
+        <button class="button-next">Next Step</button>
+      </div>
+    </div>
+    <span class="step"></span> <span class="step"></span>
+    <span class="step"></span> <span class="step"></span>
+    <span class="step"></span> <span class="step"></span>
+    <span class="step"></span>
+  </form>
 </main>
