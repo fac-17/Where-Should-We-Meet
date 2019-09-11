@@ -18,11 +18,11 @@
 
     <div class="user-input">
       <h2>What's your friend's name?</h2>
-      <input type="text" placeholder="Jane" name="friendName" />
+      <input type="text" placeholder="Jane" name="friendName" id="friendName" />
     </div>
 
     <div class="user-input">
-      <h2>What's [your friend's] location?</h2>
+      <h2>What's <span class="user-input-name"></span>'s location?</h2>
       <input type="text" placeholder="SW1A 2AA" name="friendPostcode" />
     </div>
 
@@ -48,7 +48,7 @@
     </div>
     <div class="user-input">
       <h2>ALMOST DONE!</h2>
-      <p class="highlight">Share the link below with [your friend] so that you
+      <p class="highlight">Share the link below with <span class="user-input-name"></span> so that you
         can both select your favourite venues.</p>
       <p>Once you've both picked, our sorting gnomes will use their magic to present
         a final meeting venue.</p>
