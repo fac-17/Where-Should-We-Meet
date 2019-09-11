@@ -2,7 +2,10 @@ var currentTab = 0;
 showTab(currentTab);
 
 const nextButton = document.querySelector(".button-next");
-nextButton.addEventListener("click", nextPrev);
+nextButton.addEventListener("click", nextInput);
+
+const prevButton = document.querySelector(".button-previous");
+prevButton.addEventListener("click", prevInput);
 
 function showTab(n) {
   const labelArray = document.querySelectorAll(".user-input");
@@ -22,7 +25,8 @@ function showTab(n) {
   fixStepIndicator(n);
 }
 
-function nextPrev() {
+function nextInput(e) {
+  e.preventDefault();
   console.log("currentTab", currentTab);
   const labelArray = document.querySelectorAll(".user-input");
 
@@ -36,6 +40,14 @@ function nextPrev() {
   showTab(currentTab);
 }
 
+function prevInput(e) {
+  e.preventDefault();
+  const labelArray = document.querySelectorAll(".user-input");
+  labelArray[currentTab].style.display = "none";
+  currentTab = currentTab - 1;
+  showTab(currentTab);
+}
+
 function validateForm() {
   const labelArray = document.querySelectorAll(".user-input");
   let labelInput,
@@ -45,12 +57,12 @@ function validateForm() {
   labelInput = labelArray[currentTab].querySelectorAll("input");
   for (i = 0; i < labelInput.length; i++) {
     if (labelInput[i].value === "") {
-      labelInput[i].className += "invalid";
+      labelInput[i].className += " invalid";
       valid = false;
     }
   }
   if (valid) {
-    document.querySelectorAll(".step")[currentTab].className += "finish";
+    document.querySelectorAll(".step")[currentTab].className += " finish";
   }
   return valid;
 }
@@ -59,7 +71,7 @@ function fixStepIndicator(n) {
   let i,
     stepArray = document.querySelectorAll(".step");
   for (i = 0; i < stepArray.length; i++) {
-    stepArray[i].className = stepArray[i].className.replace("active", "");
+    stepArray[i].className = stepArray[i].className.replace(" active", "");
   }
-  stepArray[n].className += "active";
+  stepArray[n].className += " active";
 }

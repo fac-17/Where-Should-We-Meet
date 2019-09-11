@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const form = require("./form");
 //write routes here
 
 router.get("/venues", (req, res) => {
@@ -9,4 +10,8 @@ router.get("/venues", (req, res) => {
     jsPath: "/js/venuesSwipe.js"
   });
 });
+
+router.get("/form", form.get);
+// router.post("/formsubmit", form.post);
+
 module.exports = router;
