@@ -2,7 +2,10 @@ var currentTab = 0;
 showTab(currentTab);
 
 const nextButton = document.querySelector(".button-next");
-nextButton.addEventListener("click", nextPrev);
+nextButton.addEventListener("click", nextInput);
+
+const prevButton = document.querySelector(".button-previous");
+prevButton.addEventListener("click", prevInput);
 
 function showTab(n) {
   const labelArray = document.querySelectorAll(".user-input");
@@ -22,7 +25,7 @@ function showTab(n) {
   fixStepIndicator(n);
 }
 
-function nextPrev(e) {
+function nextInput(e) {
   e.preventDefault();
   console.log("currentTab", currentTab);
   const labelArray = document.querySelectorAll(".user-input");
@@ -34,6 +37,14 @@ function nextPrev(e) {
     document.querySelector(".user-form").submit();
     return false;
   }
+  showTab(currentTab);
+}
+
+function prevInput(e) {
+  e.preventDefault();
+  const labelArray = document.querySelectorAll(".user-input");
+  labelArray[currentTab].style.display = "none";
+  currentTab = currentTab - 1;
   showTab(currentTab);
 }
 
