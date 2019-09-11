@@ -1,8 +1,8 @@
 const geolib = require("geolib");
 
 const getCenter = geolib.getCenterOfBounds([
-  { latitude: 51.56021, longitude: -0.12521 },
-  { latitude: 51.56373, longitude: -0.10769 }
+  { longitude: -0.109091, latitude: 51.563788 },
+  { longitude: -0.136024, latitude: 51.466785 }
 ]);
 
 console.log(getCenter);
