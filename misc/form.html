@@ -6,82 +6,80 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="formStyle.css" />
   </head>
   <body>
     <main>
-      <form class="user-form" method="POST" action="#">
-        <label>
+      <form class="user-form">
+        <div class="user-input">
           <h2>What's your name?</h2>
-          <input class="" type="text" placeholder="John" required />
-        </label>
+          <input type="text" placeholder="John" name="userName" />
+        </div>
 
-        <label class="user-input">
+        <div class="user-input">
           <h2>What's your location?</h2>
-          <input type="text" placeholder="SW1A 1AA" required />
-        </label>
+          <input type="text" placeholder="SW1A 1AA" name="postcode" />
+        </div>
 
-        <label class="user-input">
+        <div class="user-input">
           <h2>What's your friend's name?</h2>
-          <input type="text" placeholder="Jane" required />
-        </label>
+          <input type="text" placeholder="Jane" name="friendName" />
+        </div>
 
-        <label class="user-input">
+        <div class="user-input">
           <h2>What's [your friend's] location?</h2>
-          <input type="text" placeholder="SW1A 2AA" required />
-        </label>
+          <input type="text" placeholder="SW1A 2AA" name="friendPostcode" />
+        </div>
 
-        <label class="user-input">
+        <div class="user-input">
           <h2>When do you want to meet?</h2>
-          <input type="date" required /> <input type="time" required />
-        </label>
+          <input type="date" name="date" />
+          <input type="time" name="time" />
+        </div>
 
-        <label class="user-input">
+        <div class="user-input">
           <h2>What do you want to do?</h2>
-          <div name="type-of-event">
+          <div>
             <input
               id="entertainment"
               type="radio"
-              name="type-of-event"
               placeholder=""
-              required
+              name="entertainment"
             />
             <label for="entertainment">We want to be entertained!</label>
 
             <input
               id="restaurant"
               type="radio"
-              name="type-of-event"
               placeholder=""
-              required
+              name="restaurant"
             />
             <label for="restaurant">We want to enjoy a nice meal.</label>
             <input
               id="nightlife"
               type="radio"
-              name="type-of-event"
               placeholder=""
-              required
+              name="nightlife"
             />
             <label for="nightlife">We want to party!</label>
-            <input
-              id="coffee"
-              type="radio"
-              name="type-of-event"
-              placeholder=""
-              required
-            />
+            <input id="coffee" type="radio" placeholder="" name="coffee" />
             <label for="coffee">We want to have coffee.</label>
           </div>
-        </label>
-        <button class="button-previous">Go Back</button>
-        <button class="button-next">Next Step</button>
+        </div>
+        <div style="overflow:auto;">
+          <div style="float:right;">
+            <button class="button-previous">
+              Go Back
+            </button>
+            <button class="button-next">Next Step</button>
+          </div>
+        </div>
         <span class="step"></span> <span class="step"></span>
         <span class="step"></span> <span class="step"></span>
         <span class="step"></span> <span class="step"></span>
         <span class="step"></span>
       </form>
     </main>
-    <script src="userForm.js" async defer></script>
   </body>
+  <script src="userForm.js" async defer></script>
 </html>

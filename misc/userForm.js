@@ -1,9 +1,11 @@
-let currentTab = 0;
+var currentTab = 0;
 showTab(currentTab);
 
-const labelArray = document.querySelectorAll(".user-input");
+const nextButton = document.querySelector(".button-next");
+nextButton.addEventListener("click", nextPrev);
 
 function showTab(n) {
+  const labelArray = document.querySelectorAll(".user-input");
   labelArray[n].style.display = "block";
 
   if (n === 0) {
@@ -20,10 +22,13 @@ function showTab(n) {
   fixStepIndicator(n);
 }
 
-function nextOrPreviousSlide(n) {
-  if (n === 1 && !validateForm()) return false;
+function nextPrev() {
+  console.log("currentTab", currentTab);
+  const labelArray = document.querySelectorAll(".user-input");
+
+  if (!validateForm()) return false;
   labelArray[currentTab].style.display = "none";
-  currentTab = +n;
+  currentTab = currentTab + 1;
   if (currentTab >= labelArray.length) {
     document.querySelector(".user-form").submit();
     return false;
@@ -32,9 +37,13 @@ function nextOrPreviousSlide(n) {
 }
 
 function validateForm() {
-  const labelInput, i, valid = true;
+  const labelArray = document.querySelectorAll(".user-input");
+  let labelInput,
+    i,
+    valid = true;
+
   labelInput = labelArray[currentTab].querySelectorAll("input");
-  for (i = 0; i <labelInput.length; i++) {
+  for (i = 0; i < labelInput.length; i++) {
     if (labelInput[i].value === "") {
       labelInput[i].className += "invalid";
       valid = false;
@@ -47,7 +56,8 @@ function validateForm() {
 }
 
 function fixStepIndicator(n) {
-  let i, stepArray = document.querySelectorAll(".step");
+  let i,
+    stepArray = document.querySelectorAll(".step");
   for (i = 0; i < stepArray.length; i++) {
     stepArray[i].className = stepArray[i].className.replace("active", "");
   }
