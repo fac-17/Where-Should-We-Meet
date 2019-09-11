@@ -23,13 +23,20 @@ const convertPostcode = postcode => {
   });
 };
 
+const getCenter = arrayOfCoords => {
+  //change console.log to return to chain further
+  console.log(geolib.getCenterOfBounds(arrayOfCoords));
+};
+
 const coordsPromiseA = convertPostcode(postcodeA);
 const coordsPromiseB = convertPostcode(postcodeB);
 //use promise.all to get an array of results after both postcode conversion request promises have resolved.
 Promise.all([coordsPromiseA, coordsPromiseB])
   .then(resultArray => {
-    console.log(resultArray);
+    return resultArray;
   })
+  .then(getCenter)
+  //add more chained promises to handle different processes(YELP)
   .catch(err => {
     console.log(err);
   });
