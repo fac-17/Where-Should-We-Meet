@@ -1,16 +1,27 @@
+* {
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .swipe-container {
+  --n: 1;
   display: flex;
   align-items: center;
+  overflow-y: hidden;
   width: 100%;
+  width: calc(var(--n) * 100%);
   height: 50vw;
   max-height: 100vh;
-  overflow-y: hidden;
-  --n: 1;
-  width: calc(100% / var(--n) * 100%);
+  border: 2px solid red;
+  transform: translate(calc(var(--i, 0) / var(--n) * -100%));
+  transition: transform 0.3s ease-out;
 }
 
 .swipe-container img {
-  min-width: 100%;
   width: 100%;
   width: calc(100% / var(--n));
+  pointer-events: none;
 }
