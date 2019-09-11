@@ -30,3 +30,26 @@ function nextOrPreviousSlide(n) {
   }
   showTab(currentTab);
 }
+
+function validateForm() {
+  const labelInput, i, valid = true;
+  labelInput = labelArray[currentTab].querySelectorAll("input");
+  for (i = 0; i <labelInput.length; i++) {
+    if (labelInput[i].value === "") {
+      labelInput[i].className += "invalid";
+      valid = false;
+    }
+  }
+  if (valid) {
+    document.querySelectorAll(".step")[currentTab].className += "finish";
+  }
+  return valid;
+}
+
+function fixStepIndicator(n) {
+  let i, stepArray = document.querySelectorAll(".step");
+  for (i = 0; i < stepArray.length; i++) {
+    stepArray[i].className = stepArray[i].className.replace("active", "");
+  }
+  stepArray[n].className += "active";
+}
