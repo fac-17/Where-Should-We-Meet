@@ -22,7 +22,8 @@ function showTab(n) {
   fixStepIndicator(n);
 }
 
-function nextPrev() {
+function nextPrev(e) {
+  e.preventDefault();
   console.log("currentTab", currentTab);
   const labelArray = document.querySelectorAll(".user-input");
 
@@ -45,12 +46,12 @@ function validateForm() {
   labelInput = labelArray[currentTab].querySelectorAll("input");
   for (i = 0; i < labelInput.length; i++) {
     if (labelInput[i].value === "") {
-      labelInput[i].className += "invalid";
+      labelInput[i].className += " invalid";
       valid = false;
     }
   }
   if (valid) {
-    document.querySelectorAll(".step")[currentTab].className += "finish";
+    document.querySelectorAll(".step")[currentTab].className += " finish";
   }
   return valid;
 }
@@ -59,7 +60,7 @@ function fixStepIndicator(n) {
   let i,
     stepArray = document.querySelectorAll(".step");
   for (i = 0; i < stepArray.length; i++) {
-    stepArray[i].className = stepArray[i].className.replace("active", "");
+    stepArray[i].className = stepArray[i].className.replace(" active", "");
   }
-  stepArray[n].className += "active";
+  stepArray[n].className += " active";
 }
