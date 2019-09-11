@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* ---------------------------------------------- FONTS -----------------------------------------------------------*/
+
+h1,
+h2,
+h3,
+p {
+  font-family: Raleway;
+}
+
+/* ---------------------------------------------- BUTTONS -----------------------------------------------------------*/
+button {
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
