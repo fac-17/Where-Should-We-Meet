@@ -30,10 +30,11 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^8.1.0",
-    "geolib": "^3.0.4",
-    "nock": "^11.3.3",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "serve-favicon": "^2.5.0"
+    "geolib": "^3.0.4",
+    "nock": "^11.3.3",
+    "serve-favicon": "^2.5.0",
+    "sweetalert": "^2.1.2"
   }
 }
