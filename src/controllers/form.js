@@ -19,7 +19,8 @@ exports.post = (req, res) => {
       res.render("venues", {
         title: "venues",
         cssPath: "/css/venuesSwipe.css",
-        jsPath: "/js/venuesSwipe.js"
+        jsPath: "/js/venuesSwipe.js",
+        venues: filteredVenueArray
       });
     })
     .catch(err => {
