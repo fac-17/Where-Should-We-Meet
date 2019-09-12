@@ -31,36 +31,40 @@ const getVenues = centerCoords => {
   const { latitude, longitude } = centerCoords;
   console.log({ latitude });
   console.log({ longitude });
-  apiRequestPromise(
-    `https://api.yelp.com/v3/businesses/search?latitude=${latitude}&longitude=${longitude}`
-  )
-    .then(responseFromYelp => {
-      return JSON.parse(responseFromYelp).body.businesses;
-    })
-    .catch(err => {
-      console.log(err);
-    });
-};
-const businessHandler = businessArray => {
-  //do something with businessarray here
-  console.log(businessArray);
+  return new Promise((resolve, reject) => {
+    apiRequestPromise(
+      `https://api.yelp.com/v3/businesses/search?latitude=${latitude}&longitude=${longitude}`
+    )
+      .then(responseFromYelp => {
+        resolve(JSON.parse(responseFromYelp).body.businesses);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  });
 };
 
 const venueFinder = (postcodeA, postcodeB) => {
   const coordsPromiseA = convertPostcode(postcodeA);
   const coordsPromiseB = convertPostcode(postcodeB);
   //use promise.all to get an array of results after both postcode conversion request promises have resolved.
-  Promise.all([coordsPromiseA, coordsPromiseB])
-    .then(bothcoordinatesArray => {
-      return bothcoordinatesArray;
-    })
-    .then(getCenter)
-    .then(getVenues)
-    .then(businessHandler)
-    //add more chained promises to handle different processes(YELP)
-    .catch(err => {
-      console.log(err);
-    });
+  return (
+    Promise.all([coordsPromiseA, coordsPromiseB])
+      .then(bothcoordinatesArray => {
+        return bothcoordinatesArray;
+      })
+      .then(getCenter)
+      .then(getVenues)
+      .then(venuesArray => {
+        return venuesArray;
+      })
+      //add more chained promises to handle different processes(YELP)
+      .catch(err => {
+        console.log(err);
+      })
+  );
 };
-
+// venueFinder(postcodeA, postcodeB).then(array => {
+//   console.log(array);
+// });
 module.exports = venueFinder;

@@ -10,10 +10,16 @@ exports.get = (req, res) => {
 
 exports.post = (req, res) => {
   const { postcode, friendPostcode } = req.body;
-  venueFinder(postcode, friendPostcode);
-  res.render("venues", {
-    title: "venues",
-    cssPath: "/css/venuesSwipe.css",
-    jsPath: "/js/venuesSwipe.js"
-  });
+  venueFinder(postcode, friendPostcode)
+    .then(venuesArray => {
+      console.log(venuesArray[1]);
+      res.render("venues", {
+        title: "venues",
+        cssPath: "/css/venuesSwipe.css",
+        jsPath: "/js/venuesSwipe.js"
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };
