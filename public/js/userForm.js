@@ -1,8 +1,8 @@
 // PLACEHOLDER DATE AND TIME SET FOR TODAY AND CURRENT TIME
-const date = new Date();
-document.querySelector("#todaydate").valueAsDate = date;
-document.querySelector("#todaytime").value =
-  date.getHours() + ":" + date.getMinutes();
+// const date = new Date();
+// document.querySelector("#todaydate").valueAsDate = date;
+// document.querySelector("#todaytime").value =
+//   date.getHours() + ":" + date.getMinutes();
 
 var currentTab = 0;
 showTab(currentTab);
@@ -48,6 +48,7 @@ function nextInput(e) {
   labelArray[currentTab].style.display = "none";
   currentTab = currentTab + 1;
   if (currentTab >= labelArray.length) {
+    console.log("form submitted");
     document.querySelector(".user-form").submit();
     return false;
   }
