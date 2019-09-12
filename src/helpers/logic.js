@@ -45,17 +45,22 @@ const businessHandler = businessArray => {
   //do something with businessarray here
   console.log(businessArray);
 };
-const coordsPromiseA = convertPostcode(postcodeA);
-const coordsPromiseB = convertPostcode(postcodeB);
-//use promise.all to get an array of results after both postcode conversion request promises have resolved.
-Promise.all([coordsPromiseA, coordsPromiseB])
-  .then(bothcoordinatesArray => {
-    return bothcoordinatesArray;
-  })
-  .then(getCenter)
-  .then(getVenues)
-  .then(businessHandler)
-  //add more chained promises to handle different processes(YELP)
-  .catch(err => {
-    console.log(err);
-  });
+
+const venueFinder = (postcodeA, postcodeB) => {
+  const coordsPromiseA = convertPostcode(postcodeA);
+  const coordsPromiseB = convertPostcode(postcodeB);
+  //use promise.all to get an array of results after both postcode conversion request promises have resolved.
+  Promise.all([coordsPromiseA, coordsPromiseB])
+    .then(bothcoordinatesArray => {
+      return bothcoordinatesArray;
+    })
+    .then(getCenter)
+    .then(getVenues)
+    .then(businessHandler)
+    //add more chained promises to handle different processes(YELP)
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+module.exports = venueFinder;
