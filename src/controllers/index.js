@@ -9,7 +9,6 @@ router.get("/venues", (req, res) => {
   res.render("venues", {
     title: "venues",
     cssPath: "/css/venuesSwipe.css",
-    cssPathAll: "/css/homeStyle.css",
     jsPath: "/js/venuesSwipe.js"
   });
 });
