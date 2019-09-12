@@ -1,5 +1,5 @@
 const venueFinder = require("../helpers/logic");
-
+const venueFilter = require("../helpers/venueFilter");
 exports.get = (req, res) => {
   res.render("form", {
     title: "form",
@@ -10,9 +10,12 @@ exports.get = (req, res) => {
 
 exports.post = (req, res) => {
   const { postcode, friendPostcode } = req.body;
+  console.log(postcode);
+  console.log(friendPostcode);
   venueFinder(postcode, friendPostcode)
-    .then(venuesArray => {
-      console.log(venuesArray[1]);
+    .then(venuesArrayFromApi => {
+      const filteredVenueArray = venueFilter(venuesArrayFromApi);
+      console.log(filteredVenueArray);
       res.render("venues", {
         title: "venues",
         cssPath: "/css/venuesSwipe.css",
