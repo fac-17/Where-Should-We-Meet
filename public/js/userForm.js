@@ -59,6 +59,7 @@ function prevInput(e) {
 function validateForm() {
   const labelArray = document.querySelectorAll(".user-input");
   let labelInput,
+    postcodeInput,
     i,
     valid = true;
 
@@ -69,6 +70,21 @@ function validateForm() {
       valid = false;
     }
   }
+
+  postcodeInput = labelArray[currentTab].querySelectorAll(
+    ".user-input-postcode"
+  );
+  for (i = 0; i < postcodeInput.length; i++) {
+    const regex =
+      "^([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {0,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR ?0AA)$";
+    const postcode = postcodeInput[i];
+
+    if (!postcode.value.toUpperCase().match(regex)) {
+      postcode.className += " invalid";
+      valid = false;
+    }
+  }
+
   if (valid) {
     document.querySelectorAll(".step")[currentTab].className += " finish";
   }
