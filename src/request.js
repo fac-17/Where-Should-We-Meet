@@ -1,9 +1,13 @@
 //reusable request module for api calls from backend
 const https = require("https");
-
+require("dotenv").config();
 const apiRequestPromise = url => {
+  //this works, options is to set authorization header if url is yelp. otherwise its empty.
+  const options = url.includes("yelp")
+    ? { headers: { Authorization: `Bearer ${process.env.YELP_API_KEY}` } }
+    : {};
   return new Promise((resolve, reject) => {
-    const request = https.get(url, response => {
+    const request = https.get(url, options, response => {
       let statusCode = response.statusCode;
       let body = "";
       response.on("data", chunk => {

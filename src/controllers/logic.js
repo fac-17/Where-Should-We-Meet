@@ -4,8 +4,6 @@ const geolib = require("geolib");
 
 const postcodeA = "N43HR";
 const postcodeB = "W42LJ";
-let resultArray;
-let centerCoords;
 
 const convertPostcode = postcode => {
   return new Promise((resolve, reject) => {
@@ -23,9 +21,23 @@ const convertPostcode = postcode => {
   });
 };
 
+const getVenues = centerCoords => {
+  const { latitude, longitude } = centerCoords;
+  console.log({ latitude });
+  console.log({ longitude });
+  apiRequestPromise(
+    `https://api.yelp.com/v3/businesses/search?latitude=${latitude}&longitude=${longitude}`
+  )
+    .then(responseFromYelp => {
+      console.log("responseFromYelp", responseFromYelp);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
 const getCenter = arrayOfCoords => {
   //change console.log to return to chain further
-  console.log(geolib.getCenterOfBounds(arrayOfCoords));
+  return geolib.getCenterOfBounds(arrayOfCoords);
 };
 
 const coordsPromiseA = convertPostcode(postcodeA);
@@ -36,6 +48,7 @@ Promise.all([coordsPromiseA, coordsPromiseB])
     return resultArray;
   })
   .then(getCenter)
+  .then(getVenues)
   //add more chained promises to handle different processes(YELP)
   .catch(err => {
     console.log(err);
