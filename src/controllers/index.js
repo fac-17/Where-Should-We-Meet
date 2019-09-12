@@ -16,6 +16,6 @@ router.get("/venues", (req, res) => {
 router.get("/", home.get);
 router.get("/howitworks", howItWorks.get);
 router.get("/form", form.get);
-// router.post("/formsubmit", form.post);
+router.post("/formsubmit", form.post);
 
 module.exports = router;
