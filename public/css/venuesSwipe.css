@@ -4,6 +4,8 @@
 
 body {
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .swipe-container,
@@ -21,6 +23,7 @@ body {
   transition: transform 0.3s ease-out;
   position: absolute;
   visibility: hidden;
+  cursor: pointer;
 }
 
 .swipe-container img,
@@ -32,4 +35,51 @@ body {
 
 .display {
   visibility: visible;
+}
+
+/* STEPS */
+
+.step-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.step {
+  position: relative;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step.finish {
+  background-color: #4caf50;
+}
+
+/* HEART */
+
+.heart-wrap {
+  margin-top: 45rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.uncolouredHeart {
+  background-image: url(../img/uncolouredHeart.svg);
+}
+
+.colouredHeart {
+  background-image: url(../img/colouredHeart.svg);
 }
