@@ -1,4 +1,4 @@
-const venueFinder = require("../helpers/logic");
+const venueFinder = require("../helpers/venueFinder");
 const venueFilter = require("../helpers/venueFilter");
 let userName, postcode, friendName, friendPostcode, date, time;
 const get = (req, res) => {
