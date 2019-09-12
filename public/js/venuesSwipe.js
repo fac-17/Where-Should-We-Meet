@@ -1,7 +1,16 @@
 const swipeContainer = document.querySelector(".swipe-container");
 const childCount = swipeContainer.children.length;
-
+const descriptionSwipeContainer = document.querySelector(
+  ".description-swipe-container"
+);
 swipeContainer.style.setProperty("--n", childCount);
+
+// On tap, toggle swipeContainer
+
+document.addEventListener("click", () => {
+  swipeContainer.classList.toggle("display");
+  descriptionSwipeContainer.classList.toggle("display");
+});
 
 // This track just the first finger which is put down on the screen
 function unify(event) {
