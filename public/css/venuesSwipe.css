@@ -30,12 +30,8 @@ body {
   pointer-events: none;
 }
 
-.description-swipe-container {
-  background-color: blue;
-  visibility: hidden;
-}
-
 .display {
   visibility: visible;
   z-index: 5;
+  background-color: blue;
 }
