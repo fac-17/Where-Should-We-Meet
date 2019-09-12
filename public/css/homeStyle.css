@@ -17,6 +17,10 @@ p {
   font-family: Raleway;
 }
 
+h2 {
+  text-align: center;
+}
+
 /* ---------------------------------------------- BUTTONS -----------------------------------------------------------*/
 button {
   background-color: #4caf50;
@@ -26,4 +30,8 @@ button {
   font-size: 17px;
   font-family: Raleway;
   cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
 }

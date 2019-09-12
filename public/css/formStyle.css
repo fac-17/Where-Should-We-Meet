@@ -1,10 +1,4 @@
-* {
-  box-sizing: border-box;
-}
-
-h2 {
-  text-align: center;
-}
+/* ---------------------------------------------INPUT & BUTTONS ---------------------------------------------*/
 
 input {
   padding: 10px;
@@ -22,23 +16,10 @@ input.invalid {
   display: none;
 }
 
-button {
-  background-color: #4caf50;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 17px;
-  font-family: Raleway;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
 .button-previous {
   background-color: #bbbbbb;
 }
+/* ---------------------------------------------STEPS ---------------------------------------------*/
 
 .step {
   height: 15px;
@@ -59,7 +40,7 @@ button:hover {
   background-color: #4caf50;
 }
 
-/* Change radio buttons */
+/* ---------------------------------------------RADIO BUTTONS ---------------------------------------------*/
 
 .radio-toolbar {
   display: flex;
