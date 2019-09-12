@@ -21,7 +21,13 @@ const convertPostcode = postcode => {
   });
 };
 
+const getCenter = arrayOfCoords => {
+  //change console.log to return to chain further
+  return geolib.getCenterOfBounds(arrayOfCoords);
+};
+
 const getVenues = centerCoords => {
+  //store lat and long in variables to plug into yelp request url
   const { latitude, longitude } = centerCoords;
   console.log({ latitude });
   console.log({ longitude });
@@ -29,26 +35,26 @@ const getVenues = centerCoords => {
     `https://api.yelp.com/v3/businesses/search?latitude=${latitude}&longitude=${longitude}`
   )
     .then(responseFromYelp => {
-      console.log("responseFromYelp", responseFromYelp);
+      return JSON.parse(responseFromYelp).body.businesses;
     })
     .catch(err => {
       console.log(err);
     });
 };
-const getCenter = arrayOfCoords => {
-  //change console.log to return to chain further
-  return geolib.getCenterOfBounds(arrayOfCoords);
+const businessHandler = businessArray => {
+  //do something with businessarray here
+  console.log(businessArray);
 };
-
 const coordsPromiseA = convertPostcode(postcodeA);
 const coordsPromiseB = convertPostcode(postcodeB);
 //use promise.all to get an array of results after both postcode conversion request promises have resolved.
 Promise.all([coordsPromiseA, coordsPromiseB])
-  .then(resultArray => {
-    return resultArray;
+  .then(bothcoordinatesArray => {
+    return bothcoordinatesArray;
   })
   .then(getCenter)
   .then(getVenues)
+  .then(businessHandler)
   //add more chained promises to handle different processes(YELP)
   .catch(err => {
     console.log(err);
