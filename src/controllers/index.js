@@ -3,6 +3,7 @@ const router = express.Router();
 const form = require("./form");
 const home = require("./home");
 const howItWorks = require("./howItWorks");
+const final = require("./final");
 //write routes here
 
 router.get("/venues", (req, res) => {
@@ -17,5 +18,6 @@ router.get("/", home.get);
 router.get("/howitworks", howItWorks.get);
 router.get("/form", form.get);
 router.post("/formsubmit", form.post);
+router.get("/final", final.get);
 
 module.exports = router;
