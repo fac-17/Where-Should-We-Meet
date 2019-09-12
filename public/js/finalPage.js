@@ -1,4 +1,4 @@
-const friend = "Bryan";
+// const friend = "Bryan";
 
 // Google Calendar
 
@@ -7,13 +7,13 @@ const linkCalendar = document.querySelector(".link-calendar");
 let calendarTitle = `Meeting ${friend}`;
 let startTime = "20190913T193000Z";
 let endTime = "20190913T223000Z";
-let location = "North%20Pole";
+let venue = "North%20Pole";
 
 linkCalendar.href = `http://www.google.com/calendar/render?
 action=TEMPLATE
 &text=${calendarTitle}
 &dates=${startTime}/${endTime}
-&location=${location}`;
+&location=${venue}`;
 
 // Citymapper Route
 
