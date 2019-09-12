@@ -1,3 +1,9 @@
+// PLACEHOLDER DATE AND TIME SET FOR TODAY AND CURRENT TIME
+const date = new Date();
+document.querySelector("#todaydate").valueAsDate = date;
+document.querySelector("#todaytime").value =
+  date.getHours() + ":" + date.getMinutes();
+
 var currentTab = 0;
 showTab(currentTab);
 
