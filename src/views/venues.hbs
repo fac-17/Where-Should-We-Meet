@@ -1,29 +1,25 @@
 <div class="container-wrap">
-<div class="swipe-container display">
-  {{#each venues}}
-  <img src="{{image_url}}"/>
-{{/each}}
+  <div class="swipe-container display">
+    {{#each venues}}
+      <img src="{{image_url}}" />
+    {{/each}}
   </div>
 
-
-
-<div class="description-swipe-container">
-<div class="venue-description"></div>
-<div class="venue-description"></div>
-<div class="venue-description"></div>
-<div class="venue-description"></div>
-<div class="venue-description"></div>
+  <div class="description-swipe-container">
+    {{#each venues}}
+      <div>{{rating}}/5</div>
+    {{/each}}
   </div>
 </div>
 
 <div class=step-wrap>
-<span class="step"></span>
-<span class="step"></span>
-<span class="step"></span>
-<span class="step"></span>
-<span class="step"></span>
-<span class="step"></span>
-<span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
 </div>
 
 <div class="heart-wrap uncolouredHeart">
