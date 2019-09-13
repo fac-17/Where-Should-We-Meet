@@ -42,7 +42,9 @@ As a user, I want to find a convenient, suitable place to meet my friend in an e
 
 ## Tech stack
 
-- CSS
+- HTML5
+- CSS3
+- Handlebars
 - Express
 - Node.js
 - Javascript
@@ -51,8 +53,28 @@ As a user, I want to find a convenient, suitable place to meet my friend in an e
 
 ## What we've done so far
 
+- Set up file structure and added our dependencies.
+- Set up Express server, deployed to Heroku and integrated with Travis.
+- Set up our form on the front end. This is inside an image carousel, so that each input field appears on a different page.
+- Wrote a resusable API call for all of our request modules.
+- Made simultaneous requests for postcode conversion using Promise.all.
+- Find the mid location between two postcodes by using the geolib module.
+- Feed this middle location (by using the longtitude and latitude) into our Yelp API endpoint to generate a list of venues in this location.
+- Retriving details from the API response to display on our venue page.
+- Added swiping function on mobile for our image carousel.
+- Added help and info pop ups onto the home and question mark images.
+- Added links to open up Citymapper.
+- Added link to add event to Google calendar.
 
 ## What we still need to do
 
+- Lots of testing.
+- Make the venue details display correctly - currently we can display the image and the rating in the correct place, but not the name, price or location.
+- Lots of UX/UI - deciding on colours, fonts, styling etc.
+- Add functionality to our heart svg - at the moment the user can click and the heart fills in colour, but it needs to allow a user to select a venue. 
 
 ## What we're unsure of
+
+- We would like to add a second user, who is invited to the app by a link. They are then able to choose the venues along with the first user, and we would write code to find a meeting place out of the ones they both select. Not sure how to do this/if we'll have time!
+
+
