@@ -8,8 +8,13 @@ body {
   flex-direction: column;
 }
 
+/* .container-wrap {
+  border: 3px solid yellow;
+} */
+
 .swipe-container,
-.description-swipe-container {
+.description-swipe-container,
+.description-container {
   --n: 1;
   display: flex;
   align-items: center;
@@ -27,7 +32,8 @@ body {
 }
 
 .swipe-container img,
-.description-swipe-container div {
+.description-swipe-container div,
+.description-container div {
   width: 100%;
   width: calc(100% / var(--n));
   pointer-events: none;
@@ -82,4 +88,9 @@ body {
 
 .colouredHeart {
   background-image: url(../img/colouredHeart.svg);
+}
+
+.tap-for-more {
+  color: #4caf50;
+  font-size: 2em;
 }
