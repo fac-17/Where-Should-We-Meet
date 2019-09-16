@@ -2,11 +2,22 @@ const setURL = (domElement, url) => {
   domElement.href = url;
 };
 
+let date = document.querySelector(".date").innerHTML;
+let time = document.querySelector(".time").innerHTML;
+let start = date.concat("T", time, ":00Z");
+
+let startTime = new Date(start);
+
+let endTime = startTime.setHours(startTime.getHours() + 1);
+
+console.log(startTime, final);
+
 //  CALENDAR
-let friend = "Bryan";
+let friend = document.querySelector(".userB").innerHTML;
 let calendarTitle = `Meeting+${friend}`; // url encoded name of the event
-let startTime = "20190913T193000Z"; //dates in IOS format
-let endTime = "20190913T223000Z";
+// let startTime = "20190913T193000Z"; //dates in IOS format
+
+// let endTime = "20190913T223000Z";
 let startTimeOutlook = "20201231T193000";
 let endTimeOutlook = "20201231T223000";
 let venue = "North+Pole"; //url encoded location of the event
