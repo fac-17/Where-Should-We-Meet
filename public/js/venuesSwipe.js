@@ -6,11 +6,14 @@ const descriptionSwipeContainer = document.querySelector(
 const descriptionContainer = document.querySelector(".description-container");
 const containerWrap = document.querySelector(".container-wrap");
 const heart = document.querySelector(".heart-wrap");
+const tapHere = document.querySelector(".tap-for-more");
 
 // On tap, toggle colour of heart
 heart.addEventListener("click", () => {
   heart.classList.toggle("uncolouredHeart");
   heart.classList.toggle("colouredHeart");
+  // swipeContainer.classList.toggle("display");
+  // descriptionSwipeContainer.classList.toggle("display");
 });
 
 swipeContainer.style.setProperty("--n", childCount);
@@ -18,7 +21,7 @@ descriptionSwipeContainer.style.setProperty("--n", childCount);
 descriptionContainer.style.setProperty("--n", childCount);
 // On tap, toggle swipeContainer
 
-containerWrap.addEventListener("click", () => {
+tapHere.addEventListener("click", () => {
   swipeContainer.classList.toggle("display");
   descriptionSwipeContainer.classList.toggle("display");
   // descriptionContainer.classList.toggle("display");
