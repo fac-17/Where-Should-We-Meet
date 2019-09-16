@@ -1,12 +1,15 @@
-const variables = require("./form");
+const getData = require("../model/queries/getData");
 
 exports.get = (req, res) => {
-  res.render("final", {
-    title: "final",
-    cssPath: "/css/finalStyle.css",
-    jsPath: "/js/finalPage.js",
-    friendName: variables.friendName,
-    date: variables.date,
-    time: variables.time
+  getData((error, response) => {
+    if (error) console.log(error);
+    else {
+      res.render("final", {
+        title: "final",
+        cssPath: "/css/finalStyle.css",
+        jsPath: "/js/finalPage.js",
+        data: response.rows[0]
+      });
+    }
   });
 };
