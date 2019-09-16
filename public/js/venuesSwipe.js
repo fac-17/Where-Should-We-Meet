@@ -3,6 +3,7 @@ const childCount = swipeContainer.children.length;
 const descriptionSwipeContainer = document.querySelector(
   ".description-swipe-container"
 );
+const descriptionContainer = document.querySelector(".description-container");
 const containerWrap = document.querySelector(".container-wrap");
 const heart = document.querySelector(".heart-wrap");
 
@@ -14,12 +15,13 @@ heart.addEventListener("click", () => {
 
 swipeContainer.style.setProperty("--n", childCount);
 descriptionSwipeContainer.style.setProperty("--n", childCount);
-
+descriptionContainer.style.setProperty("--n", childCount);
 // On tap, toggle swipeContainer
 
 containerWrap.addEventListener("click", () => {
   swipeContainer.classList.toggle("display");
   descriptionSwipeContainer.classList.toggle("display");
+  // descriptionContainer.classList.toggle("display");
 });
 
 // This track just the first finger which is put down on the screen
@@ -44,6 +46,7 @@ const move = event => {
     if ((i > 0 || sign < 0) && (i < childCount - 1 || sign > 0))
       swipeContainer.style.setProperty("--i", (i -= sign));
     descriptionSwipeContainer.style.setProperty("--i", (i -= sign));
+    descriptionContainer.style.setProperty("--i", (i -= sign));
     x0 = null;
   }
 };
