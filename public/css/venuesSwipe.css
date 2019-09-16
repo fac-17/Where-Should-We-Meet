@@ -27,8 +27,12 @@ body {
   transform: translate(calc(var(--i, 0) / var(--n) * -100%));
   transition: transform 0.3s ease-out;
   position: absolute;
-  visibility: hidden;
   cursor: pointer;
+}
+
+.swipe-container,
+.description-swipe-container {
+  visibility: hidden;
 }
 
 .swipe-container img,
@@ -37,6 +41,11 @@ body {
   width: 100%;
   width: calc(100% / var(--n));
   pointer-events: none;
+}
+
+.description-wrap {
+  display: flex;
+  flex-direction: column;
 }
 
 .display {
@@ -93,4 +102,8 @@ body {
 .tap-for-more {
   color: #4caf50;
   font-size: 2em;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  z-index: 3;
 }
