@@ -1,25 +1,21 @@
 // PLACEHOLDER DATE AND TIME SET FOR TODAY AND CURRENT TIME
-// const date = new Date();
-// document.querySelector("#todaydate").valueAsDate = date;
-// document.querySelector("#todaytime").value =
-//   date.getHours() + ":" + date.getMinutes();
+const date = new Date();
+document.querySelector("#todaydate").valueAsDate = date;
+document.querySelector("#todaytime").value =
+  date.getHours() + ":" + date.getMinutes();
 
-var currentTab = 0;
-showTab(currentTab);
+let currentTab = 0;
 
 const nextButton = document.querySelector(".button-next");
 const prevButton = document.querySelector(".button-previous");
 const userInputNames = document.querySelectorAll(".user-input-name");
 
-nextButton.addEventListener("click", nextInput);
-prevButton.addEventListener("click", prevInput);
-
-function updateName() {
+const updateName = () => {
   const friendName = document.querySelector("#friendName").value;
   userInputNames.forEach(name => (name.textContent = friendName));
-}
+};
 
-function showTab(n) {
+const showTab = n => {
   const labelArray = document.querySelectorAll(".user-input");
   labelArray[n].style.display = "block";
 
@@ -38,30 +34,17 @@ function showTab(n) {
     updateName();
   }
   fixStepIndicator(n);
-}
+};
 
-function nextInput(e) {
-  e.preventDefault();
-  const labelArray = document.querySelectorAll(".user-input");
+showTab(currentTab);
 
-  if (!validateForm()) return false;
-  labelArray[currentTab].style.display = "none";
-  currentTab = currentTab + 1;
-  if (currentTab >= labelArray.length) {
-    console.log("form submitted");
-    document.querySelector(".user-form").submit();
-    return false;
-  }
-  showTab(currentTab);
-}
-
-function prevInput(e) {
+const prevInput = e => {
   e.preventDefault();
   const labelArray = document.querySelectorAll(".user-input");
   labelArray[currentTab].style.display = "none";
   currentTab = currentTab - 1;
   showTab(currentTab);
-}
+};
 
 function validateForm() {
   const labelArray = document.querySelectorAll(".user-input");
@@ -97,6 +80,24 @@ function validateForm() {
   }
   return valid;
 }
+
+const nextInput = e => {
+  e.preventDefault();
+  const labelArray = document.querySelectorAll(".user-input");
+
+  if (!validateForm()) return false;
+  labelArray[currentTab].style.display = "none";
+  currentTab = currentTab + 1;
+  if (currentTab >= labelArray.length) {
+    console.log("form submitted");
+    document.querySelector(".user-form").submit();
+    return false;
+  }
+  showTab(currentTab);
+};
+
+nextButton.addEventListener("click", nextInput);
+prevButton.addEventListener("click", prevInput);
 
 function fixStepIndicator(n) {
   let i,
