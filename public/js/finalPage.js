@@ -20,8 +20,6 @@ let endTime = new Date(start)
   .toISOString()
   .replace(/\W/g, "");
 
-console.log(startTime, endTime);
-
 let startTimeOutlook = startTime.replace(/Z/, "");
 let endTimeOutlook = endTime.replace(/Z/, "");
 
@@ -62,7 +60,7 @@ window.onclick = function(event) {
 
 // --------------------------------------ROUTE-------------------------------------------
 const linkCitymapper = document.querySelector(".link-citymapper");
-let postcodeA = "SE207BW";
+let postcodeA = document.querySelector(".start-postcode").innerHTML;
 let postcodeB = "W42LJ";
 
 const postcodeConverter = postcode =>
