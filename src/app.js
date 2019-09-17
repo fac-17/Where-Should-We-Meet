@@ -3,6 +3,10 @@ const path = require("path");
 const favicon = require("serve-favicon");
 const handlebars = require("express-handlebars");
 const bodyParser = require("body-parser");
+<<<<<<< Updated upstream
+=======
+const cookie = require("cookie");
+>>>>>>> Stashed changes
 const helpers = require("./views/helpers/index");
 const controllers = require("./controllers");
 
