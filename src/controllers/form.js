@@ -12,7 +12,6 @@ const get = (req, res) => {
 
 const post = (req, res) => {
   ({ userName, postcode, friendName, friendPostcode, date, time } = req.body);
-  console.log("post function");
   postData(
     userName,
     postcode,

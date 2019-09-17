@@ -1,3 +1,8 @@
 language: node_js
 node_js:
- - "node"
+  - "node"
+services:
+  - "postgresql"
+before_script:
+  - psql -c 'create database meet_me_test;' -U postgres
+  - psql -c "create user whereshouldwemeet WITH PASSWORD 'inthemiddle'" -U postgres
