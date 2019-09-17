@@ -62,13 +62,44 @@ window.onclick = function(event) {
 
 // --------------------------------------ROUTE-------------------------------------------
 const linkCitymapper = document.querySelector(".link-citymapper");
+let postcodeA = "SE207BW";
+let postcodeB = "W42LJ";
 
-let startLat = "51.41828";
-let startLon = "-0.05647";
-let endLat = "51.537060";
-let endLon = "0.079179";
-let endName = "The%20Proud%20Archivist";
-let arrivalTime = "2016-08-06T21%3A00%2B01%3A00";
-let cityMapperHref = `https://citymapper.com/directions?startcoord=${startLat}%2C${startLon}&endcoord=${endLat}%2C${endLon}&endname=${endName}&arrival_time=${arrivalTime}`;
+const postcodeConverter = postcode =>
+  fetch(`https://api.postcodes.io/postcodes/${postcode}`)
+    .then(response => {
+      return response.json();
+    })
+    .then(myJson => {
+      let longitude = myJson.result.longitude;
+      let latitude = myJson.result.latitude;
+      let coords = { longitude, latitude };
+      return coords;
+    })
+    .catch(err => {
+      reject(err);
+    });
 
-setURL(linkCitymapper, cityMapperHref);
+const routeFinder = (postcode1, postcode2) => {
+  const coordsPromiseA = postcodeConverter(postcode1);
+  const coordsPromiseB = postcodeConverter(postcode2);
+  return Promise.all([coordsPromiseA, coordsPromiseB])
+    .then(bothcoordinatesArray => {
+      return bothcoordinatesArray;
+    })
+    .then(coordsArr => {
+      let startLat = coordsArr[0].latitude;
+      let startLon = coordsArr[0].longitude;
+      let endLat = coordsArr[1].latitude;
+      let endLon = coordsArr[1].longitude;
+      let endName = "The%20Proud%20Archivist";
+      let arrivalTime = "2016-08-06T21%3A00%2B01%3A00";
+      let cityMapperHref = `https://citymapper.com/directions?startcoord=${startLat}%2C${startLon}&endcoord=${endLat}%2C${endLon}&endname=${endName}&arrival_time=${arrivalTime}`;
+      setURL(linkCitymapper, cityMapperHref);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+routeFinder(postcodeA, postcodeB);
