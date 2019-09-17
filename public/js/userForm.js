@@ -91,7 +91,7 @@ const nextInput = e => {
   if (currentTab >= labelArray.length) {
     console.log("form submitted");
     document.querySelector(".user-form").submit();
-    return false;
+    return;
   }
   showTab(currentTab);
 };
