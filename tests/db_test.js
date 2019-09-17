@@ -20,14 +20,10 @@ tape("getData", t => {
         postcodeb: "SW12AA",
         dateinput: "20 October 2019",
         timeinput: "14:50",
-<<<<<<< Updated upstream
-        venuetype: "bar"
-=======
         venuetype: "bar",
         jwtoken: "jwTokenDummy2",
         venuelongitude: null,
         venuelatitude: null
->>>>>>> Stashed changes
       }
     ];
     getData((err, result) => {
@@ -49,10 +45,7 @@ tape("postData", t => {
       "21 August 2020",
       "17.00",
       "restaurant",
-<<<<<<< Updated upstream
-=======
       "webtoken",
->>>>>>> Stashed changes
       (err, res) => {
         if (err) console.log(err);
         getData((err, res) => {
