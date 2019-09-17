@@ -7,9 +7,10 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "tape tests/*.js | tap-spec",
     "start": "node src/server.js",
-    "db_init": "node src/model/db_init.js"
+    "db_init": "node src/model/db_init.js",
+    "dev": "nodemon src/server.js",
+    "test": "NODE_ENV=test node tests/db_test.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -30,11 +31,14 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cookie": "^0.4.0",
+    "cookie-parser": "^1.4.4",
     "dotenv": "^8.1.0",
     "env2": "^2.2.2",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "geolib": "^3.0.4",
+    "jsonwebtoken": "^8.5.1",
     "nock": "^11.3.3",
     "pg": "^7.12.1",
     "requirejs": "^2.3.6",

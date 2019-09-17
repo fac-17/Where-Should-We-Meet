@@ -3,10 +3,13 @@ const path = require("path");
 const favicon = require("serve-favicon");
 const handlebars = require("express-handlebars");
 const bodyParser = require("body-parser");
-
+const cookie = require("cookie");
+const helpers = require("./views/helpers/index");
 const controllers = require("./controllers");
 
 const app = express();
+
+//middleware
 
 //set up view engine();
 app.set("views", path.join(__dirname, "views"));
@@ -17,7 +20,8 @@ app.engine(
     extname: "hbs",
     layoutsDir: path.join(__dirname, "views", "layouts"),
     partialsDir: path.join(__dirname, "views", "partials"),
-    defaultLayout: "main"
+    defaultLayout: "main",
+    helpers: helpers
   })
 );
 app.use(bodyParser.urlencoded({ extended: false }));
