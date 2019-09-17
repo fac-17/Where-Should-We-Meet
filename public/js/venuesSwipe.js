@@ -4,7 +4,7 @@ const descriptionSwipeContainer = document.querySelector(
   ".description-swipe-container"
 );
 const descriptionContainer = document.querySelector(".description-container");
-const containerWrap = document.querySelector(".container-wrap");
+// const containerWrap = document.querySelector(".container-wrap");
 const heart = document.querySelector(".heart-wrap");
 const tapHere = document.querySelector(".tap-for-more");
 
