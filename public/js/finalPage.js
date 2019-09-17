@@ -6,25 +6,32 @@ let date = document.querySelector(".date").innerHTML;
 let time = document.querySelector(".time").innerHTML;
 let start = date.concat("T", time, ":00Z");
 
-let startTime = new Date(start);
-
-let endTime = startTime.setHours(startTime.getHours() + 1);
-
-console.log(startTime, final);
+Date.prototype.addHours = function(h) {
+  this.setHours(this.getHours() + h);
+  return this;
+};
 
 //  CALENDAR
 let friend = document.querySelector(".userB").innerHTML;
 let calendarTitle = `Meeting+${friend}`; // url encoded name of the event
-// let startTime = "20190913T193000Z"; //dates in IOS format
+let startTime = new Date(start).toISOString().replace(/\W/g, "");
+let endTime = new Date(start)
+  .addHours(1)
+  .toISOString()
+  .replace(/\W/g, "");
 
-// let endTime = "20190913T223000Z";
-let startTimeOutlook = "20201231T193000";
-let endTimeOutlook = "20201231T223000";
+console.log(startTime, endTime);
+
+let startTimeOutlook = startTime.replace(/Z/, "");
+let endTimeOutlook = endTime.replace(/Z/, "");
+
 let venue = "North+Pole"; //url encoded location of the event
 
 const linkGoogleCalendar = document.querySelector(".fa-google");
 const linkOutlookCalendar = document.querySelector(".fa-outlook");
 const linkYahooCalendar = document.querySelector(".fa-yahoo");
+
+// https://calendar.google.com/calendar/r/eventedit?text=$&dates=$20190920T131300000Z/$20190920T141300000Z&location=$North+Pole
 
 let GoogleCalendarHref = `https://calendar.google.com/calendar/r/eventedit?text=${calendarTitle}&dates=${startTime}/${endTime}&location=${venue}`;
 let OutlookCalendarHref = `https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&startdt=${startTimeOutlook}&enddt=${endTimeOutlook}&subject=${calendarTitle}&location=${venue}`;
@@ -53,7 +60,7 @@ window.onclick = function(event) {
   }
 };
 
-// ROUTE
+// --------------------------------------ROUTE-------------------------------------------
 const linkCitymapper = document.querySelector(".link-citymapper");
 
 let startLat = "51.41828";
