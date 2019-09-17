@@ -30,6 +30,7 @@ const showTab = n => {
   } else {
     document.querySelector(".button-next").textContent = "Next Step";
   }
+  //update friend's name in next section of form
   if (n === 3) {
     updateName();
   }
@@ -46,52 +47,51 @@ const prevInput = e => {
   showTab(currentTab);
 };
 
-function validateForm() {
+const validateEmpty = () => {
   const labelArray = document.querySelectorAll(".user-input");
   let labelInput,
-    postcodeInput,
-    i,
     valid = true;
 
-  labelInput = labelArray[currentTab].querySelectorAll("input");
-  for (i = 0; i < labelInput.length; i++) {
-    if (labelInput[i].value === "") {
-      labelInput[i].className += " invalid";
-      valid = false;
-    }
+  labelInput = labelArray[currentTab].querySelector("input");
+  if (labelInput.value === "") {
+    labelInput.className += " invalid";
+    valid = false;
   }
-
-  postcodeInput = labelArray[currentTab].querySelectorAll(
-    ".user-input-postcode"
-  );
-  for (i = 0; i < postcodeInput.length; i++) {
-    const regex =
-      "^([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {0,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR ?0AA)$";
-    const postcode = postcodeInput[i];
-
-    if (!postcode.value.toUpperCase().match(regex)) {
-      postcode.className += " invalid";
-      valid = false;
-    }
-  }
-
   if (valid) {
     document.querySelectorAll(".step")[currentTab].className += " finish";
   }
   return valid;
-}
+};
 
+const validatePostcode = () => {
+  let valid = true;
+  const labelArray = document.querySelectorAll(".user-input");
+  const postcodeInput = labelArray[currentTab].querySelector(
+    ".user-input-postcode"
+  );
+  const regex =
+    "^([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {0,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR ?0AA)$";
+
+  if (!postcodeInput.value.toUpperCase().match(regex)) {
+    postcodeInput.className += " invalid";
+    valid = false;
+  }
+  return valid;
+};
 const nextInput = e => {
   e.preventDefault();
   const labelArray = document.querySelectorAll(".user-input");
 
-  if (!validateForm()) return false;
+  if (!validateEmpty()) return false;
+  if (currentTab == 1 || currentTab == 3) {
+    if (!validatePostcode()) return false;
+  }
   labelArray[currentTab].style.display = "none";
   currentTab = currentTab + 1;
   if (currentTab >= labelArray.length) {
     console.log("form submitted");
     document.querySelector(".user-form").submit();
-    return false;
+    return;
   }
   showTab(currentTab);
 };
@@ -107,3 +107,11 @@ function fixStepIndicator(n) {
   }
   stepArray[n].className += " active";
 }
+//prevent implicit submission when pressing enter key
+document
+  .querySelector(".user-form")
+  .addEventListener("keypress", function(event) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+    }
+  });

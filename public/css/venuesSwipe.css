@@ -86,3 +86,9 @@ body {
 .colouredHeart {
   background-image: url(../img/colouredHeart.svg);
 }
+
+/* STARS */
+.stars img {
+  width: 50px;
+  height: auto;
+}
