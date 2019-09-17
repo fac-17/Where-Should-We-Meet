@@ -1,7 +1,7 @@
 .dropbtn {
-  background-color: white;
-  border: 1px solid #777;
-  color: #4c4c4c;
+  background-color: #637bd0;
+  border: 2px solid #5366aa;
+  color: #fff;
   padding: 16px;
   font-size: 16px;
   cursor: pointer;
@@ -11,6 +11,7 @@
   position: relative;
   display: inline-block;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -37,4 +38,13 @@
 
 .show {
   display: block;
+}
+
+.citymapper-logo {
+  border-radius: 1rem;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  /* border: 2px solid #298b20; */
+  width: 85px;
+  height: 80px;
+  padding: 0.5rem;
 }
