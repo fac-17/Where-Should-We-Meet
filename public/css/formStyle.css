@@ -1,11 +1,21 @@
 /* ---------------------------------------------INPUT & BUTTONS ---------------------------------------------*/
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-form-inner-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+}
 
 input {
   padding: 10px;
-  width: 100%;
+  /* width: 100%; */
   font-size: 17px;
-  font-family: Raleway;
-  border: 1px solid #aaaaaa;
 }
 
 input.invalid {
@@ -16,10 +26,19 @@ input.invalid {
   display: none;
 }
 
-.button-previous {
-  background-color: #bbbbbb;
+.button-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
 }
+
 /* ---------------------------------------------STEPS ---------------------------------------------*/
+
+.step-wrap {
+  display: flex;
+  flex-direction: row;
+}
 
 .step {
   height: 15px;
@@ -58,7 +77,7 @@ input.invalid {
   background-color: #ddd;
   padding: 10px 20px;
   margin: 5px 0;
-  font-family: Raleway;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   border: 2px solid #444;
   border-radius: 4px;
