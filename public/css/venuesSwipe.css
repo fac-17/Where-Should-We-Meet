@@ -7,10 +7,47 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* SARAH */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid blue;
+}
 
-/* .container-wrap {
-  border: 3px solid yellow;
-} */
+.container-swipe {
+  --n: 1;
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+  width: 100%;
+  width: calc(var(--n) * 100%);
+  height: 50vw;
+  max-height: 100vh;
+  border: 2px solid red;
+  transform: translate(calc(var(--i, 0) / var(--n) * -100%));
+  transition: transform 0.3s ease-out;
+  position: absolute;
+  cursor: pointer;
+}
+
+.containerSwipe {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerSwipe,
+.swipe-fullContainer {
+  visibility: hidden;
+  width: 100%;
+  width: calc(100% / var(--n));
+  pointer-events: none;
+  /* background-color: yellow; */
+}
+.display {
+  visibility: visible;
+}
+
+/* SARAH */
 
 .swipe-container,
 .description-swipe-container,
@@ -99,11 +136,11 @@ body {
   background-image: url(../img/colouredHeart.svg);
 }
 
-.tap-for-more {
+/* .tap-for-more {
   color: #4caf50;
   font-size: 2em;
   cursor: pointer;
   width: 100px;
   height: 100px;
   z-index: 3;
-}
+} */
