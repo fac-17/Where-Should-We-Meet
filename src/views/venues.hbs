@@ -2,7 +2,7 @@
 
 <h1>Pick your favourite venue</h1>
 
-<div class="container-wrap">
+<div class="swipe-container">
   <div class="swipe-container display">
     {{#each venues}}
       <img src="{{image_url}}" />
@@ -15,7 +15,7 @@
     {{/each}}
   </div>
 </div>
-<div class="tap-for-more">Tap here for more</div>
+<button class="tap-for-more">Tap here for more</button>
 
 <div class="description-container">
   {{#each venues}}
