@@ -8,11 +8,21 @@ const postData = (
   dateInput,
   timeInput,
   venueType,
+  webToken,
   cb
 ) => {
   db_connection.query(
-    "INSERT INTO user_a_input(usera,postcodea,userb,postcodeb,dateinput,timeinput,venuetype) VALUES($1,$2,$3,$4,$5,$6,$7)",
-    [userA, postcodeA, userB, postcodeB, dateInput, timeInput, venueType],
+    "INSERT INTO user_a_input(usera,postcodea,userb,postcodeb,dateinput,timeinput,venuetype,jwtoken) VALUES($1,$2,$3,$4,$5,$6,$7,$8)",
+    [
+      userA,
+      postcodeA,
+      userB,
+      postcodeB,
+      dateInput,
+      timeInput,
+      venueType,
+      webToken
+    ],
     (err, result) => {
       if (err) return err;
       cb(null, result);
