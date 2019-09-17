@@ -1,3 +1,3 @@
 module.exports = {
-  rating: require("./rating")
+  starFinder: require("./starFinder")
 };

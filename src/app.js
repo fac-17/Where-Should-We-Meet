@@ -3,6 +3,7 @@ const path = require("path");
 const favicon = require("serve-favicon");
 const handlebars = require("express-handlebars");
 const bodyParser = require("body-parser");
+const helpers = require("./views/helpers/index");
 
 const controllers = require("./controllers");
 
