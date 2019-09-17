@@ -6,27 +6,30 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }
 
-.main-container {
-  display: flex;
-  flex-direction: row;
-  border: 2px solid blue;
+.img-container {
+  width: 100vw;
+  height: 40vh;
+  overflow: hidden;
+  position: relative;
+}
+.img-container img {
+  width: 100%;
 }
 
 .container-swipe {
   --n: 1;
   display: flex;
-  align-items: center;
-  overflow-y: hidden;
+  align-items: space-between;
   width: 100%;
   width: calc(var(--n) * 100%);
-  height: 50vw;
   max-height: 100vh;
   border: 2px solid red;
   transform: translate(calc(var(--i, 0) / var(--n) * -100%));
   transition: transform 0.3s ease-out;
-  position: absolute;
   cursor: pointer;
 }
 
@@ -36,7 +39,6 @@ body {
   width: 100%;
   width: calc(100% / var(--n));
   pointer-events: none;
-  /* background-color: yellow; */
 }
 
 /* STEPS */
@@ -70,7 +72,6 @@ body {
 /* HEART */
 
 .heart-wrap {
-  margin-top: 45rem;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
