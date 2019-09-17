@@ -7,7 +7,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-/* SARAH */
+
 .main-container {
   display: flex;
   flex-direction: row;
@@ -38,48 +38,6 @@ body {
   pointer-events: none;
   /* background-color: yellow; */
 }
-
-/* SARAH */
-
-/* .swipe-container,
-.description-swipe-container,
-.description-container {
-  --n: 1;
-  display: flex;
-  align-items: center;
-  overflow-y: hidden;
-  width: 100%;
-  width: calc(var(--n) * 100%);
-  height: 50vw;
-  max-height: 100vh;
-  border: 2px solid red;
-  transform: translate(calc(var(--i, 0) / var(--n) * -100%));
-  transition: transform 0.3s ease-out;
-  position: absolute;
-  cursor: pointer;
-}
-
-.swipe-container,
-.description-swipe-container {
-  visibility: hidden;
-}
-
-.swipe-container img,
-.description-swipe-container div,
-.description-container div {
-  width: 100%;
-  width: calc(100% / var(--n));
-  pointer-events: none;
-}
-
-.description-wrap {
-  display: flex;
-  flex-direction: column;
-}
-
-.display {
-  visibility: visible;
-} */
 
 /* STEPS */
 
@@ -127,12 +85,3 @@ body {
 .colouredHeart {
   background-image: url(../img/colouredHeart.svg);
 }
-
-/* .tap-for-more {
-  color: #4caf50;
-  font-size: 2em;
-  cursor: pointer;
-  width: 100px;
-  height: 100px;
-  z-index: 3;
-} */
