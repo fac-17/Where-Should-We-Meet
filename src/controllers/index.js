@@ -5,12 +5,13 @@ const home = require("./home");
 const howItWorks = require("./howItWorks");
 const final = require("./final");
 //write routes here
-
+const samplevenues = require("./../helpers/samplevenuearray");
 router.get("/venues", (req, res) => {
   res.render("venues", {
     title: "venues",
     cssPath: "/css/venuesSwipe.css",
-    jsPath: "/js/venuesSwipe.js"
+    jsPath: "/js/venuesSwipe.js",
+    venues: samplevenues
   });
 });
 

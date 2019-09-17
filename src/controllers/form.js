@@ -28,6 +28,7 @@ const post = (req, res) => {
         venueFinder(postcode, friendPostcode)
           .then(venuesArrayFromApi => {
             const filteredVenueArray = venueFilter(venuesArrayFromApi);
+            // console.log(filteredVenueArray);
             console.log(filteredVenueArray);
             res.render("venues", {
               title: "venues",
