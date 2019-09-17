@@ -3,10 +3,14 @@ const path = require("path");
 const favicon = require("serve-favicon");
 const handlebars = require("express-handlebars");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const cookie = require("cookie");
 
 const controllers = require("./controllers");
 
 const app = express();
+
+//middleware
 
 //set up view engine();
 app.set("views", path.join(__dirname, "views"));
