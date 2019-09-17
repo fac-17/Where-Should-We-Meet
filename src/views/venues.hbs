@@ -1,3 +1,7 @@
+
+
+<h1>Pick your favourite venue</h1>
+
 <div class="container-wrap">
   <div class="swipe-container display">
     {{#each venues}}
@@ -11,12 +15,15 @@
     {{/each}}
   </div>
 </div>
+<div class="tap-for-more">Tap here for more</div>
 
 <div class="description-container">
   {{#each venues}}
-  <div>{{name}}</div>
-  <div>{{location}}</div>
-  <div>{{price}}</div>
+  <div class="description-wrap">
+    <div>{{name}}</div>
+    <div>{{location}}</div>
+    <div>{{price}}</div>
+  </div>
   {{/each}}
 </div>
 
@@ -30,6 +37,8 @@
   <span class="step"></span>
 </div>
 
+
+<div>
 <div class="heart-wrap uncolouredHeart">
 </div>
-<div class"tap-for-more">Tap for more</div>
+</div>
