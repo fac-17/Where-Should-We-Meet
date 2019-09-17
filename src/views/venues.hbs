@@ -12,7 +12,7 @@
       {{#each venues}}
       <div>{{name}}</div>
       <div>{{rating}}/5</div>
-      <div>{{location.zip_code}}{{location.city}}</div>
+      <div>{{address}}</div>
       <div>{{price}}</div>
     {{/each}}
     </div>
@@ -47,7 +47,7 @@
 {{/each}}
 </div>
 </div>
-<div class="tap-for-more">Tap here for more</div> 
+<div class="tap-for-more">Tap here for more</div>
 
 <div class="description-container">
   {{#each venues}}
