@@ -72,7 +72,6 @@
 const mainContainer = document.querySelector(".main-container");
 const containerSwipe = document.querySelector(".container-swipe");
 const childCount = containerSwipe.children.length;
-const swipeFullContainer = document.querySelector(".swipe-fullContainer");
 
 containerSwipe.style.setProperty("--n", childCount);
 

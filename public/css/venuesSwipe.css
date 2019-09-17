@@ -30,26 +30,18 @@ body {
   cursor: pointer;
 }
 
-.containerSwipe {
+.venue-box {
   display: flex;
   flex-direction: column;
-}
-
-.containerSwipe,
-.swipe-fullContainer {
-  visibility: hidden;
   width: 100%;
   width: calc(100% / var(--n));
   pointer-events: none;
   /* background-color: yellow; */
 }
-.display {
-  visibility: visible;
-}
 
 /* SARAH */
 
-.swipe-container,
+/* .swipe-container,
 .description-swipe-container,
 .description-container {
   --n: 1;
@@ -87,7 +79,7 @@ body {
 
 .display {
   visibility: visible;
-}
+} */
 
 /* STEPS */
 
