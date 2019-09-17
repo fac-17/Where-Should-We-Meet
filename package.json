@@ -9,9 +9,8 @@
   "scripts": {
     "start": "node src/server.js",
     "db_init": "node src/model/db_init.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
     "test": "NODE_ENV=test node tests/db_test.js | tap-spec"
-
   },
   "repository": {
     "type": "git",
