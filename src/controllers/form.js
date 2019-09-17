@@ -34,10 +34,10 @@ const post = (req, res) => {
     date,
     time,
     "TBC",
-    error => {
+    jwtToken,
+    (error, result) => {
       if (error) console.log(error);
       else {
-        console.log("I'm in post function");
         venueFinder(postcode, friendPostcode)
           .then(venuesArrayFromApi => {
             const filteredVenueArray = venueFilter(venuesArrayFromApi);
