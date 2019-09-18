@@ -59,7 +59,10 @@ window.onclick = function(event) {
 // --------------------------------------ROUTE-------------------------------------------
 const linkCitymapper = document.querySelector(".link-citymapper");
 let postcodeA = document.querySelector(".start-postcode").innerHTML;
-let postcodeB = document.querySelector(".venue-postcode").innerHTML;
+let postcodeB = document
+  .querySelector(".venue-postcode")
+  .innerHTML.replace(/\s/g, "");
+console.log(postcodeA, postcodeB);
 
 const postcodeConverter = postcode =>
   fetch(`https://api.postcodes.io/postcodes/${postcode}`)
@@ -88,9 +91,8 @@ const routeFinder = (postcode1, postcode2) => {
       let startLon = coordsArr[0].longitude;
       let endLat = coordsArr[1].latitude;
       let endLon = coordsArr[1].longitude;
-      let endName = "The%20Proud%20Archivist";
       let arrivalTime = "2016-08-06T21%3A00%2B01%3A00";
-      let cityMapperHref = `https://citymapper.com/directions?startcoord=${startLat}%2C${startLon}&endcoord=${endLat}%2C${endLon}&endname=${endName}&arrival_time=${arrivalTime}`;
+      let cityMapperHref = `https://citymapper.com/directions?startcoord=${startLat}%2C${startLon}&endcoord=${endLat}%2C${endLon}&endname=${venueName}&arrival_time=${arrivalTime}`;
       setURL(linkCitymapper, cityMapperHref);
     })
     .catch(err => {
