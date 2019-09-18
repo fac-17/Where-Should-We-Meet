@@ -1,7 +1,7 @@
 .dropbtn {
-  background-color: white;
-  border: 1px solid #777;
-  color: #4c4c4c;
+  background-color: #637bd0;
+  border: 2px solid #5366aa;
+  color: #fff;
   padding: 16px;
   font-size: 16px;
   cursor: pointer;
@@ -11,6 +11,7 @@
   position: relative;
   display: inline-block;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -20,6 +21,9 @@
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  border-radius: 1rem;
+  width: 11.3rem;
+  text-align: center;
 }
 
 .dropdown-content a {
@@ -28,7 +32,7 @@
   text-decoration: none;
   display: block;
   color: #4c4c4c;
-  font-family: Raleway;
+  font-family: "Montserrat", sans-serif;
 }
 
 .dropdown a:hover {
@@ -37,4 +41,19 @@
 
 .show {
   display: block;
+}
+
+.citymapper-logo {
+  border-radius: 1rem;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  /* border: 2px solid #298b20; */
+  width: 85px;
+  height: 80px;
+  padding: 0.5rem;
+}
+
+.next-step-icon-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
