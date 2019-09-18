@@ -49,10 +49,7 @@ tape("postData", t => {
       "21 August 2020",
       "17.00",
       "restaurant",
-<<<<<<< Updated upstream
-=======
       "webtoken",
->>>>>>> Stashed changes
       (err, res) => {
         if (err) console.log(err);
         getData((err, res) => {
