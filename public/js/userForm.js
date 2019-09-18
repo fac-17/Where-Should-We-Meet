@@ -16,7 +16,7 @@ const updateName = () => {
 };
 
 const showTab = n => {
-  const labelArray = document.querySelectorAll(".user-input");
+  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
   labelArray[n].style.display = "block";
 
   if (n === 0) {
@@ -41,14 +41,14 @@ showTab(currentTab);
 
 const prevInput = e => {
   e.preventDefault();
-  const labelArray = document.querySelectorAll(".user-input");
+  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
   labelArray[currentTab].style.display = "none";
   currentTab = currentTab - 1;
   showTab(currentTab);
 };
 
 const validateEmpty = () => {
-  const labelArray = document.querySelectorAll(".user-input");
+  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
   let labelInput,
     valid = true;
 
@@ -65,7 +65,7 @@ const validateEmpty = () => {
 
 const validatePostcode = () => {
   let valid = true;
-  const labelArray = document.querySelectorAll(".user-input");
+  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
   const postcodeInput = labelArray[currentTab].querySelector(
     ".user-input-postcode"
   );
@@ -80,7 +80,7 @@ const validatePostcode = () => {
 };
 const nextInput = e => {
   e.preventDefault();
-  const labelArray = document.querySelectorAll(".user-input");
+  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
 
   if (!validateEmpty()) return false;
   if (currentTab == 1 || currentTab == 3) {
