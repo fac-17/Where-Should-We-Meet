@@ -71,11 +71,24 @@ const validatePostcode = () => {
     postcodeInput.classList.add("invalid");
     error.innerText = "Please enter a valid postcode!";
     valid = false;
+    return valid;
+  } else {
+    fetch(`https://api.postcodes.io/postcodes/{postcodeInput.value}`)
+      .then(res => {
+        return res.json();
+      })
+      .then(resObj => {
+        valid = resObj.status === 404 ? false : true;
+        if (valid === false) {
+          error.innerText = "Please enter a valid postcode";
+          postcodeInput.classList.add("invalid");
+          return valid;
+        }
+      });
   }
   if (valid === true) {
     error.innerText = "";
   }
-  return valid;
 };
 
 const validateRadio = () => {
