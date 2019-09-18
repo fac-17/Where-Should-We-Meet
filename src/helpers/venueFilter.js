@@ -1,5 +1,4 @@
 const venueFilter = venuesArray => {
-  console.log(venuesArray);
   let newVenueArray = venuesArray.map(venueObject => {
     let newVenueObject = {};
     ["name", "image_url", "rating", "price"].forEach(

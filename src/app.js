@@ -3,7 +3,7 @@ const path = require("path");
 const favicon = require("serve-favicon");
 const handlebars = require("express-handlebars");
 const bodyParser = require("body-parser");
-const cookie = require("cookie");
+const cookieParser = require("cookie-parser");
 const helpers = require("./views/helpers/index");
 const controllers = require("./controllers");
 
@@ -24,8 +24,8 @@ app.engine(
     helpers: helpers
   })
 );
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.set("port", process.env.PORT || 3000);
 app.use(favicon(path.join(__dirname, "..", "public", "logo.ico")));
 app.use(express.static("public"));
