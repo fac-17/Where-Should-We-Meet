@@ -2,7 +2,6 @@ const venueFinder = require("../helpers/venueFinder");
 const venueFilter = require("../helpers/venueFilter");
 const postData = require("../model/queries/postData");
 const jwt = require("jsonwebtoken");
-const cookie = require("cookie");
 
 let userName, postcode, friendName, friendPostcode, date, time;
 
