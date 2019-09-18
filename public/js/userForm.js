@@ -2,7 +2,7 @@ let currentTab = 0;
 
 const nextButton = document.querySelector(".button-next");
 const prevButton = document.querySelector(".button-previous");
-const userInputNames = document.querySelectorAll(".user-input-name");
+const userInputNames = document.querySelectorAll(".user-input-outer-wrap-name");
 
 const updateName = () => {
   const friendName = document.querySelector("#friendName").value;
@@ -10,7 +10,7 @@ const updateName = () => {
 };
 
 const showTab = n => {
-  const inputArray = document.querySelectorAll(".user-input");
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
   inputArray[n].style.display = "block";
 
   if (n === 0) {
@@ -41,7 +41,7 @@ const showTab = n => {
 showTab(currentTab);
 
 const validateEmpty = () => {
-  const inputArray = document.querySelectorAll(".user-input");
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
   let valid = true;
 
   const labelInput = inputArray[currentTab].querySelector("input");
@@ -60,9 +60,9 @@ const validateEmpty = () => {
 
 const validatePostcode = () => {
   let valid = true;
-  const inputArray = document.querySelectorAll(".user-input");
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
   const postcodeInput = inputArray[currentTab].querySelector(
-    ".user-input-postcode"
+    ".user-input-outer-wrap-postcode"
   );
   const error = inputArray[currentTab].querySelector(".error");
   const regex = /^([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {0,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR ?0AA)$/i;
@@ -80,7 +80,7 @@ const validatePostcode = () => {
 
 const validateRadio = () => {
   let valid = false;
-  const inputArray = document.querySelectorAll(".user-input");
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
   const error = inputArray[currentTab].querySelector(".error");
   const radioInputs = inputArray[currentTab].querySelectorAll(".radio-input");
   radioInputs.forEach(radioInput => {
@@ -97,7 +97,7 @@ const validateRadio = () => {
 
 const validateDateTime = () => {
   let valid = true;
-  const inputArray = document.querySelectorAll(".user-input");
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
   const error = inputArray[currentTab].querySelector(".error");
   const dateInput = document.querySelector("#todaydate");
   const timeInput = document.querySelector("#todaytime");
@@ -127,7 +127,7 @@ const validateDateTime = () => {
 };
 const nextInput = e => {
   e.preventDefault();
-  const inputArray = document.querySelectorAll(".user-input");
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
   //validation
   if (currentTab === 1 || currentTab === 3) {
     if (!validateEmpty()) return false;
@@ -153,7 +153,7 @@ const nextInput = e => {
 
 const prevInput = e => {
   e.preventDefault();
-  const inputArray = document.querySelectorAll(".user-input");
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
   inputArray[currentTab].style.display = "none";
   currentTab = currentTab - 1;
   showTab(currentTab);
@@ -179,7 +179,7 @@ document
     }
   });
 //add event listener to every input to reset error message when input is detected
-document.querySelectorAll(".user-input").forEach(inputDiv => {
+document.querySelectorAll(".user-input-outer-wrap").forEach(inputDiv => {
   inputDiv.querySelectorAll("input").forEach(input => {
     input.addEventListener("input", () => {
       inputDiv.querySelector(".error").innerHTML = "";
