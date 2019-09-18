@@ -1,28 +1,32 @@
 <header class="header">{{> headerNoHelp}}</header>
 <main>
-    <h1>HURRAY!</h1>
-    <p class="highlight">You're meeting <span class="userB">{{data.userb}}</span></p>
-    <p>at<br>
-        <span class="time">{{data.timeinput}}</span><br>
-        on<br>
-        <span class="date">{{data.dateinput}}</span><br>
-        at<br>
-        <span class="final-venu"></span>
-        <span class="start-postcode" style="display:none">{{data.postcodea}}</span>
-    </p>
-<div class="next-step-icon-wrap">
-    <a href="" target="_blank" class="link-citymapper"><img class="citymapper-logo"
-            src="./img/citymapper.png"
-            alt="Get directions with Citymapper" /></a>
+  <h1>HURRAY!</h1>
+  <p class="highlight">You're meeting
+    <span class="userB">{{data.userb}}</span>
+  </p>
+  <p>at<br>
+    <span class="time">{{data.timeinput}}</span><br>
+    on<br>
+    <span class="date">{{data.dateinput}}</span><br>
+    at<br>
+    <span class="final-venu"></span>
+    <span class="start-postcode" style="display:none">{{data.postcodea}}</span>
+  </p>
+  <div class="next-step-icon-wrap">
 
-    <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn"> <i class="fa fa-calendar-o" aria-hidden="true"></i> Add to
-            Calendar</button>
-        <div id="myDropdown" class="dropdown-content">
-            <a href="#" class="fa fa-yahoo" aria-hidden="true" target="_blank"> Yahoo</a>
-            <a href="#" class="fa fa-google" aria-hidden="true" target="_blank"> Google</a>
-            <a href="#" class="fa fa-outlook" aria-hidden="true" target="_blank"> Outlook</a>
-        </div>
+    <a href="" target="_blank" class="link-citymapper">
+      <img class="citymapper-button" src="./img/citymapper.png" alt="Get directions with Citymapper" />
+    </a>
+
+    <div class="add-to-calendar-button-wrap">
+      <button onclick="myFunction()" class="add-to-calander-button"> <i class="fa fa-calendar-o" aria-hidden="true"></i> Add to
+        Calendar</button>
+      <div id="myDropdown" class="add-to-calendar-dropdown-content">
+        <a href="#" class="fa fa-yahoo" aria-hidden="true" target="_blank"> Yahoo</a>
+        <a href="#" class="fa fa-google" aria-hidden="true" target="_blank"> Google</a>
+        <a href="#" class="fa fa-outlook" aria-hidden="true" target="_blank"> Outlook</a>
+      </div>
     </div>
+
   </div>
 </main>
