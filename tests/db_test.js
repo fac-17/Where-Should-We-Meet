@@ -22,8 +22,9 @@ tape("getData", t => {
         timeinput: "14:50",
         venuetype: "bar",
         jwtoken: "jwTokenDummy2",
-        venuelongitude: null,
-        venuelatitude: null
+        venuename: null,
+        venuepostcode: null,
+        venueaddress: null
       }
     ];
     getData((err, result) => {

@@ -2,20 +2,21 @@ const setURL = (domElement, url) => {
   domElement.href = url;
 };
 
-let date = document.querySelector(".date").innerHTML;
-let time = document.querySelector(".time").innerHTML;
-let start = date.concat("T", time, ":00Z");
+let date = document.querySelector(".date").innerHTML.split("-");
+let time = document.querySelector(".time").innerHTML.split(":");
+let startDateTime = date.concat(time).map(i => parseInt(i));
+let venueName = document.querySelector(".venue-name").innerHTML;
 
 Date.prototype.addHours = function(h) {
   this.setHours(this.getHours() + h);
   return this;
 };
 
-//  CALENDAR
+// --------------------------------------CALENDAR-------------------------------------------
 let friend = document.querySelector(".userB").innerHTML;
 let calendarTitle = `Meeting+${friend}`; // url encoded name of the event
-let startTime = new Date(start).toISOString().replace(/\W/g, "");
-let endTime = new Date(start)
+let startTime = new Date(...startDateTime).toISOString().replace(/\W/g, "");
+let endTime = new Date(...startDateTime)
   .addHours(1)
   .toISOString()
   .replace(/\W/g, "");
@@ -23,28 +24,23 @@ let endTime = new Date(start)
 let startTimeOutlook = startTime.replace(/Z/, "");
 let endTimeOutlook = endTime.replace(/Z/, "");
 
-let venue = "North+Pole"; //url encoded location of the event
-
 const linkGoogleCalendar = document.querySelector(".fa-google");
 const linkOutlookCalendar = document.querySelector(".fa-outlook");
 const linkYahooCalendar = document.querySelector(".fa-yahoo");
 
-// https://calendar.google.com/calendar/r/eventedit?text=$&dates=$20190920T131300000Z/$20190920T141300000Z&location=$North+Pole
-
-let GoogleCalendarHref = `https://calendar.google.com/calendar/r/eventedit?text=${calendarTitle}&dates=${startTime}/${endTime}&location=${venue}`;
-let OutlookCalendarHref = `https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&startdt=${startTimeOutlook}&enddt=${endTimeOutlook}&subject=${calendarTitle}&location=${venue}`;
-let YahooCalendarHref = `https://calendar.yahoo.com/?v=60&amp;title=${calendarTitle}&amp;st=${startTimeOutlook}&amp;et=${endTimeOutlook}&amp;in_loc=${venue}`;
+let GoogleCalendarHref = `https://calendar.google.com/calendar/r/eventedit?text=${calendarTitle}&dates=${startTime}/${endTime}&location=${venueName}`;
+let OutlookCalendarHref = `https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&startdt=${startTimeOutlook}&enddt=${endTimeOutlook}&subject=${calendarTitle}&location=${venueName}`;
+let YahooCalendarHref = `https://calendar.yahoo.com/?v=60&amp;title=${calendarTitle}&amp;st=${startTimeOutlook}&amp;et=${endTimeOutlook}&amp;in_loc=${venueName}`;
 
 setURL(linkGoogleCalendar, GoogleCalendarHref);
 setURL(linkOutlookCalendar, OutlookCalendarHref);
 setURL(linkYahooCalendar, YahooCalendarHref);
 
-//Drop Down Menu for Calendar Selection
+// --------------------------------------DROPDOWN MENU-------------------------------------------
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -61,7 +57,9 @@ window.onclick = function(event) {
 // --------------------------------------ROUTE-------------------------------------------
 const linkCitymapper = document.querySelector(".link-citymapper");
 let postcodeA = document.querySelector(".start-postcode").innerHTML;
-let postcodeB = "W42LJ";
+let postcodeB = document
+  .querySelector(".venue-postcode")
+  .innerHTML.replace(/\s/g, "");
 
 const postcodeConverter = postcode =>
   fetch(`https://api.postcodes.io/postcodes/${postcode}`)
@@ -90,9 +88,7 @@ const routeFinder = (postcode1, postcode2) => {
       let startLon = coordsArr[0].longitude;
       let endLat = coordsArr[1].latitude;
       let endLon = coordsArr[1].longitude;
-      let endName = "The%20Proud%20Archivist";
-      let arrivalTime = "2016-08-06T21%3A00%2B01%3A00";
-      let cityMapperHref = `https://citymapper.com/directions?startcoord=${startLat}%2C${startLon}&endcoord=${endLat}%2C${endLon}&endname=${endName}&arrival_time=${arrivalTime}`;
+      let cityMapperHref = `https://citymapper.com/directions?startcoord=${startLat}%2C${startLon}&endcoord=${endLat}%2C${endLon}&endname=${venueName}`;
       setURL(linkCitymapper, cityMapperHref);
     })
     .catch(err => {
