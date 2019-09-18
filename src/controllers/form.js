@@ -1,8 +1,6 @@
 const postData = require("../model/queries/postData");
 const jwt = require("jsonwebtoken");
 
-let userName, postcode, friendName, friendPostcode, date, time;
-
 const get = (req, res) => {
   res.render("form", {
     title: "form",
@@ -12,7 +10,14 @@ const get = (req, res) => {
 };
 
 const post = (req, res) => {
-  ({ userName, postcode, friendName, friendPostcode, date, time } = req.body);
+  const {
+    userName,
+    postcode,
+    friendName,
+    friendPostcode,
+    date,
+    time
+  } = req.body;
   const sessionDetails = {
     userName,
     postcode,
@@ -43,25 +48,5 @@ const post = (req, res) => {
 
 module.exports = {
   get,
-  post,
-  userName,
-  postcode,
-  friendName,
-  friendPostcode,
-  date,
-  time
+  post
 };
-
-// venueFinder(postcode, friendPostcode)
-//   .then(venuesArrayFromApi => {
-//     const filteredVenueArray = venueFilter(venuesArrayFromApi);
-//     res.render("venues", {
-//       title: "venues",
-//       cssPath: "/css/venuesSwipe.css",
-//       jsPath: "/js/venuesSwipe.js",
-//       venues: filteredVenueArray
-//     });
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });

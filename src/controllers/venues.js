@@ -2,7 +2,6 @@ const getData = require("../model/queries/getData");
 const venueFinder = require("../helpers/venueFinder");
 const venueFilter = require("../helpers/venueFilter");
 
-const samplevenues = require("./../helpers/samplevenuearray").venues;
 exports.get = (req, res) => {
   getData((err, result) => {
     console.log(result.rows);
@@ -22,10 +21,4 @@ exports.get = (req, res) => {
         console.log(err);
       });
   });
-  // res.render("venues", {
-  //   title: "venues",
-  //   cssPath: "/css/venuesSwipe.css",
-  //   jsPath: "/js/venuesSwipe.js",
-  //   venues: samplevenues
-  // });
 };
