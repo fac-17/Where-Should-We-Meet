@@ -44,6 +44,10 @@ header {
   text-decoration: none;
 }
 
+.overlay {
+  z-index: 1;
+}
+
 .header-button-link-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -79,6 +83,7 @@ header {
 }
 
 .popup {
+  z-index: 1;
   margin: 70px auto;
   padding: 20px;
   background: #fff;

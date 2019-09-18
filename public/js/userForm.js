@@ -2,7 +2,7 @@ let currentTab = 0;
 
 const nextButton = document.querySelector(".button-next");
 const prevButton = document.querySelector(".button-previous");
-const userInputNames = document.querySelectorAll(".user-input-name");
+const userInputNames = document.querySelectorAll(".user-input-outer-wrap-name");
 
 const updateName = () => {
   const friendName = document.querySelector("#friendName").value;
@@ -10,8 +10,8 @@ const updateName = () => {
 };
 
 const showTab = n => {
-  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
-  labelArray[n].style.display = "block";
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
+  inputArray[n].style.display = "block";
 
   if (n === 0) {
     document.querySelector(".button-previous").style.display = "none";
@@ -19,7 +19,7 @@ const showTab = n => {
     document.querySelector(".button-previous").style.display = "inline";
   }
 
-  if (n === labelArray.length - 1) {
+  if (n === inputArray.length - 1) {
     document.querySelector(".button-next").textContent = "Select Venues";
   } else {
     document.querySelector(".button-next").textContent = "Next Step";
@@ -41,65 +41,110 @@ const showTab = n => {
 showTab(currentTab);
 
 const validateEmpty = () => {
-  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
-  let labelInput,
-    valid = true;
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
+  let valid = true;
 
-  labelInput = labelArray[currentTab].querySelector("input");
+  const labelInput = inputArray[currentTab].querySelector("input");
+  const error = inputArray[currentTab].querySelector(".error");
   if (labelInput.value === "") {
-    labelInput.className += " invalid";
+    labelInput.classList.add("invalid");
     valid = false;
+    error.innerText = "Please fill in this field!";
   }
   if (valid) {
-    document.querySelectorAll(".step")[currentTab].className += " finish";
+    document.querySelectorAll(".step")[currentTab].classList.add("finish");
+    error.innerText = "";
   }
   return valid;
 };
 
 const validatePostcode = () => {
   let valid = true;
-  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
-  const postcodeInput = labelArray[currentTab].querySelector(
-    ".user-input-postcode"
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
+  const postcodeInput = inputArray[currentTab].querySelector(
+    ".user-input-outer-wrap-postcode"
   );
-  const regex =
-    "^([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {0,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR ?0AA)$";
+  const error = inputArray[currentTab].querySelector(".error");
+  const regex = /^([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {0,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR ?0AA)$/i;
 
   if (!postcodeInput.value.toUpperCase().match(regex)) {
-    postcodeInput.className += " invalid";
+    postcodeInput.classList.add("invalid");
+    error.innerText = "Please enter a valid postcode!";
     valid = false;
+  }
+  if (valid === true) {
+    error.innerText = "";
   }
   return valid;
 };
 
 const validateRadio = () => {
   let valid = false;
-  const labelArray = document.querySelectorAll("user-input-outer-wrap");
-  const radioInputs = labelArray[currentTab].querySelectorAll(".radio-input");
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
+  const error = inputArray[currentTab].querySelector(".error");
+  const radioInputs = inputArray[currentTab].querySelectorAll(".radio-input");
   radioInputs.forEach(radioInput => {
     if (radioInput.checked) valid = true;
   });
+  if (valid === false) {
+    error.innerText = "Please select one of these options!";
+    radioInputs.forEach(radioInput => radioInput.classList.add("invalid"));
+  } else {
+    error.innerText = "";
+  }
   return valid;
 };
 
+const validateDateTime = () => {
+  let valid = true;
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
+  const error = inputArray[currentTab].querySelector(".error");
+  const dateInput = document.querySelector("#todaydate");
+  const timeInput = document.querySelector("#todaytime");
+  const dateNow = new Date();
+  var dateString = new Date(
+    dateNow.getTime() - dateNow.getTimezoneOffset() * 60000
+  )
+    .toISOString()
+    .split("T")[0];
+  console.log(dateInput.value, dateString);
+  if (dateInput.value < dateString) {
+    error.innerHTML = "Please enter a date in the future!";
+    dateInput.classList.add("invalid");
+    valid = false;
+  } else if (
+    timeInput.value < dateNow.getHours() + ":" + dateNow.getMinutes() &&
+    dateInput.value <= dateString
+  ) {
+    error.innerHTML = "Please enter a time in the future!";
+    timeInput.classList.add("invalid");
+    valid = false;
+  } else {
+    error.innerHTML = "";
+    valid = true;
+  }
+  return valid;
+};
 const nextInput = e => {
   e.preventDefault();
-  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
   //validation
   if (currentTab === 1 || currentTab === 3) {
-    if (!validatePostcode()) return false;
     if (!validateEmpty()) return false;
+    if (!validatePostcode()) return false;
+  } else if (currentTab === 4) {
+    if (!validateDateTime()) return false;
   } else if (currentTab === 5) {
     if (!validateRadio()) return false;
   } else {
     if (!validateEmpty()) return false;
   }
-  if (currentTab === labelArray.length - 1) {
+  if (currentTab === inputArray.length - 1) {
     console.log("form submitted");
     document.querySelector(".user-form").submit();
     return;
   } else {
-    labelArray[currentTab].style.display = "none";
+    inputArray[currentTab].style.display = "none";
     currentTab = currentTab + 1;
     console.log(currentTab);
     showTab(currentTab);
@@ -108,8 +153,8 @@ const nextInput = e => {
 
 const prevInput = e => {
   e.preventDefault();
-  const labelArray = document.querySelectorAll(".user-input");
-  labelArray[currentTab].style.display = "none";
+  const inputArray = document.querySelectorAll(".user-input-outer-wrap");
+  inputArray[currentTab].style.display = "none";
   currentTab = currentTab - 1;
   showTab(currentTab);
 };
@@ -121,9 +166,9 @@ function fixStepIndicator(n) {
   let i,
     stepArray = document.querySelectorAll(".step");
   for (i = 0; i < stepArray.length; i++) {
-    stepArray[i].className = stepArray[i].className.replace(" active", "");
+    stepArray[i].classList.remove("active");
   }
-  stepArray[n].className += " active";
+  stepArray[n].classList.add("active");
 }
 //prevent implicit submission when pressing enter key
 document
@@ -133,3 +178,12 @@ document
       event.preventDefault();
     }
   });
+//add event listener to every input to reset error message when input is detected
+document.querySelectorAll(".user-input-outer-wrap").forEach(inputDiv => {
+  inputDiv.querySelectorAll("input").forEach(input => {
+    input.addEventListener("input", () => {
+      inputDiv.querySelector(".error").innerHTML = "";
+      input.classList.remove("invalid");
+    });
+  });
+});
