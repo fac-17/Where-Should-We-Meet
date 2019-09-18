@@ -1,5 +1,3 @@
-const venueFinder = require("../helpers/venueFinder");
-const venueFilter = require("../helpers/venueFilter");
 const postData = require("../model/queries/postData");
 const jwt = require("jsonwebtoken");
 
@@ -37,19 +35,7 @@ const post = (req, res) => {
     (error, result) => {
       if (error) console.log(error);
       else {
-        venueFinder(postcode, friendPostcode)
-          .then(venuesArrayFromApi => {
-            const filteredVenueArray = venueFilter(venuesArrayFromApi);
-            res.render("venues", {
-              title: "venues",
-              cssPath: "/css/venuesSwipe.css",
-              jsPath: "/js/venuesSwipe.js",
-              venues: filteredVenueArray
-            });
-          })
-          .catch(err => {
-            console.log(err);
-          });
+        res.redirect("/venues");
       }
     }
   );
@@ -65,3 +51,17 @@ module.exports = {
   date,
   time
 };
+
+// venueFinder(postcode, friendPostcode)
+//   .then(venuesArrayFromApi => {
+//     const filteredVenueArray = venueFilter(venuesArrayFromApi);
+//     res.render("venues", {
+//       title: "venues",
+//       cssPath: "/css/venuesSwipe.css",
+//       jsPath: "/js/venuesSwipe.js",
+//       venues: filteredVenueArray
+//     });
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
