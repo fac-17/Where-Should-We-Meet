@@ -1,20 +1,9 @@
-<<<<<<< HEAD
-<h1>Pick your favourite venue</h1>
-<div class="container-swipe">
-  {{#each venues}}
-  <div class="venue-box">
-    <div class="img-container"><img src="{{image_url}}" /></div>
-    <div>{{name}}</div>
-    <div class="stars">{{{starFinder rating}}}</div>
-    <div>{{address}}</div>
-    <div>{{postcode}}</div>
-    <div>{{price}}</div>
-=======
 <header>
 
   {{>header}}
 
 </header>
+
   <h1>Pick your favourite venue</h1>
   <div class="container-swipe">
     {{#each venues}}
@@ -23,13 +12,14 @@
       <div>{{name}}</div>
       <div class="stars">{{{starFinder rating}}}</div>
       <div>{{address}}</div>
+      <div>{{postcode}}</div>
       <div>{{price}}</div>
     </div>
     {{/each}}
->>>>>>> master
   </div>
   {{/each}}
 </div>
+
 <div class=step-wrap>
   <span class="step"></span>
   <span class="step"></span>
