@@ -57,39 +57,39 @@ const validateEmpty = () => {
   }
   return valid;
 };
-
-const validatePostcode = () => {
+//dont change this to es6.. it is an async/await function setup to wait for the response from postcode api before proceeding
+async function validatePostcode() {
   let valid = true;
   const inputArray = document.querySelectorAll(".user-input-outer-wrap");
-  const postcodeInput = inputArray[currentTab].querySelector(
-    ".user-input-outer-wrap-postcode"
-  );
+  const postcodeInput = inputArray[currentTab].querySelector(".postcode");
   const error = inputArray[currentTab].querySelector(".error");
   const regex = /^([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {0,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR ?0AA)$/i;
 
-  if (!postcodeInput.value.toUpperCase().match(regex)) {
+  if (!postcodeInput.value.match(regex)) {
     postcodeInput.classList.add("invalid");
     error.innerText = "Please enter a valid postcode!";
     valid = false;
-    return valid;
   } else {
-    fetch(`https://api.postcodes.io/postcodes/{postcodeInput.value}`)
+    valid = await fetch(
+      `https://api.postcodes.io/postcodes/${postcodeInput.value}`
+    )
       .then(res => {
         return res.json();
       })
       .then(resObj => {
-        valid = resObj.status === 404 ? false : true;
-        if (valid === false) {
+        let validBasedOnFetchResponse = resObj.status === 404 ? false : true;
+        if (validBasedOnFetchResponse === false) {
           error.innerText = "Please enter a valid postcode";
           postcodeInput.classList.add("invalid");
-          return valid;
         }
+        return validBasedOnFetchResponse;
       });
   }
   if (valid === true) {
     error.innerText = "";
   }
-};
+  return valid;
+}
 
 const validateRadio = () => {
   let valid = false;
@@ -120,7 +120,6 @@ const validateDateTime = () => {
   )
     .toISOString()
     .split("T")[0];
-  console.log(dateInput.value, dateString);
   if (dateInput.value < dateString) {
     error.innerHTML = "Please enter a date in the future!";
     dateInput.classList.add("invalid");
@@ -138,13 +137,17 @@ const validateDateTime = () => {
   }
   return valid;
 };
-const nextInput = e => {
+//dont change this to es6.. this is an async await function set up to wait for validatepostcode() promise to resolve before proceeding.
+async function nextInput(e) {
   e.preventDefault();
   const inputArray = document.querySelectorAll(".user-input-outer-wrap");
   //validation
   if (currentTab === 1 || currentTab === 3) {
     if (!validateEmpty()) return false;
-    if (!validatePostcode()) return false;
+    const validPostcode = await validatePostcode().then(valid => {
+      return valid;
+    });
+    if (!validPostcode) return false;
   } else if (currentTab === 4) {
     if (!validateDateTime()) return false;
   } else if (currentTab === 5) {
@@ -153,16 +156,14 @@ const nextInput = e => {
     if (!validateEmpty()) return false;
   }
   if (currentTab === inputArray.length - 1) {
-    console.log("form submitted");
     document.querySelector(".user-form").submit();
     return;
   } else {
     inputArray[currentTab].style.display = "none";
     currentTab = currentTab + 1;
-    console.log(currentTab);
     showTab(currentTab);
   }
-};
+}
 
 const prevInput = e => {
   e.preventDefault();

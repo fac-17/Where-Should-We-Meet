@@ -1,8 +1,9 @@
 const db_connection = require("../db_connection");
 
-const getData = cb => {
+const getData = (cb, webToken) => {
   db_connection.query(
-    "SELECT * FROM user_a_input ORDER BY id DESC LIMIT 1",
+    "SELECT * FROM user_a_input WHERE jwToken=$1",
+    [webToken],
     (err, result) => {
       if (err) return cb(err);
       cb(null, result);
