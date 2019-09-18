@@ -28,7 +28,7 @@ tape("getData", t => {
         venueaddress: "Trafalgar Square"
       }
     ];
-    getData((err, result) => {
+    getData("jwTokenDummy2", (err, result) => {
       if (err) console.log(err);
       t.deepEqual(result.rows, expected, "returns expected data");
       t.end();
@@ -50,9 +50,9 @@ tape("postData", t => {
       "webtoken",
       (err, res) => {
         if (err) console.log(err);
-        getData((err, res) => {
+        getData("jwTokenDummy2", (err, res) => {
           if (err) console.log(err);
-          t.equals(res.rows[0].usera, "Georgia", "posts data");
+          t.equals(res.rows[0].usera, "Sarah", "posts data");
           t.end();
         });
       }
@@ -70,7 +70,7 @@ tape("update data", t => {
       "jwTokenDummy2",
       (err, res) => {
         if (err) console.log(err);
-        getData((err, res) => {
+        getData("jwTokenDummy2", (err, res) => {
           if (err) console.log(err);
           t.equals(res.rows[0].venuename, "Soho House", "data is the same");
           t.end();
