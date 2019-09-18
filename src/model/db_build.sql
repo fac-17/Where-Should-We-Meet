@@ -19,6 +19,6 @@ CREATE TABLE User_A_input(
 
 INSERT INTO User_A_input(userA, postcodeA, userB, postcodeB, dateInput, timeInput, venueType, jwToken, venueName, venuePostcode, venueAddress) VALUES
   ('Leonie', 'SE207BW', 'Georgia', 'W55EP', '18 September 2019', '20:15', 'restaurant', 'jwTokenDummy', 'Dishmaker', 'WC2H 9FB', '12 Upper Saint Martins Lane'),
-  ('Sarah', 'SW17AP', 'Ruby', 'SW12AA', '20 October 2019', '14:50', 'bar', 'jwTokenDummy2', 'The National Gallery', 'WC2N 5DN', 'Trafalgar Square'); 
+  ('Sarah', 'SE207BW', 'Ruby', 'SW12AA', '20 October 2019', '14:50', 'bar', 'jwTokenDummy2', 'The National Gallery', 'WC2N 5DN', 'Trafalgar Square'); 
 
 COMMIT;
