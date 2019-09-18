@@ -1,9 +1,3 @@
-// PLACEHOLDER DATE AND TIME SET FOR TODAY AND CURRENT TIME
-const date = new Date();
-document.querySelector("#todaydate").valueAsDate = date;
-document.querySelector("#todaytime").value =
-  date.getHours() + ":" + date.getMinutes();
-
 let currentTab = 0;
 
 const nextButton = document.querySelector(".button-next");
@@ -34,18 +28,17 @@ const showTab = n => {
   if (n === 3) {
     updateName();
   }
+  if (n === 4) {
+    // PLACEHOLDER DATE AND TIME SET FOR TODAY AND CURRENT TIME
+    const date = new Date();
+    document.querySelector("#todaydate").valueAsDate = date;
+    document.querySelector("#todaytime").value =
+      date.getHours() + ":" + date.getMinutes();
+  }
   fixStepIndicator(n);
 };
 
 showTab(currentTab);
-
-const prevInput = e => {
-  e.preventDefault();
-  const labelArray = document.querySelectorAll(".user-input");
-  labelArray[currentTab].style.display = "none";
-  currentTab = currentTab - 1;
-  showTab(currentTab);
-};
 
 const validateEmpty = () => {
   const labelArray = document.querySelectorAll(".user-input");
@@ -78,21 +71,46 @@ const validatePostcode = () => {
   }
   return valid;
 };
+
+const validateRadio = () => {
+  let valid = false;
+  const labelArray = document.querySelectorAll(".user-input");
+  const radioInputs = labelArray[currentTab].querySelectorAll(".radio-input");
+  radioInputs.forEach(radioInput => {
+    if (radioInput.checked) valid = true;
+  });
+  return valid;
+};
+
 const nextInput = e => {
   e.preventDefault();
   const labelArray = document.querySelectorAll(".user-input");
-
-  if (!validateEmpty()) return false;
-  if (currentTab == 1 || currentTab == 3) {
+  //validation
+  if (currentTab === 1 || currentTab === 3) {
     if (!validatePostcode()) return false;
+    if (!validateEmpty()) return false;
+  } else if (currentTab === 5) {
+    if (!validateRadio()) return false;
+  } else {
+    if (!validateEmpty()) return false;
   }
-  labelArray[currentTab].style.display = "none";
-  currentTab = currentTab + 1;
-  if (currentTab >= labelArray.length) {
+  if (currentTab === labelArray.length - 1) {
     console.log("form submitted");
     document.querySelector(".user-form").submit();
     return;
+  } else {
+    labelArray[currentTab].style.display = "none";
+    currentTab = currentTab + 1;
+    console.log(currentTab);
+    showTab(currentTab);
   }
+};
+
+const prevInput = e => {
+  e.preventDefault();
+  const labelArray = document.querySelectorAll(".user-input");
+  labelArray[currentTab].style.display = "none";
+  currentTab = currentTab - 1;
   showTab(currentTab);
 };
 
@@ -111,7 +129,7 @@ function fixStepIndicator(n) {
 document
   .querySelector(".user-form")
   .addEventListener("keypress", function(event) {
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
       event.preventDefault();
     }
   });
