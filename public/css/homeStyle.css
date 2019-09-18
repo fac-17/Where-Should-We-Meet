@@ -73,6 +73,7 @@ button:hover {
 }
 
 .overlay {
+  z-index: 1;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -89,6 +90,7 @@ button:hover {
 }
 
 .popup {
+  z-index: 1;
   margin: 70px auto;
   padding: 20px;
   background: #fff;
