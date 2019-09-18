@@ -73,12 +73,11 @@ const validatePostcode = () => {
 };
 
 const validateRadio = () => {
-  let valid = true;
+  let valid = false;
   const labelArray = document.querySelectorAll(".user-input");
   const radioInputs = labelArray[currentTab].querySelectorAll(".radio-input");
   radioInputs.forEach(radioInput => {
-    if (radioInput.checked === false) valid = false;
-    else valid = true;
+    if (radioInput.checked) valid = true;
   });
   return valid;
 };
