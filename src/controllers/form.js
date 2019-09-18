@@ -16,6 +16,7 @@ const get = (req, res) => {
 
 const post = (req, res) => {
   ({ userName, postcode, friendName, friendPostcode, date, time } = req.body);
+
   const sessionDetails = {
     userName,
     postcode,

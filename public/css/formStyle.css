@@ -14,7 +14,7 @@
 
 input {
   padding: 10px;
-  /* width: 100%; */
+  width: 100%;
   font-size: 17px;
   text-align: center;
 }
@@ -50,14 +50,16 @@ input.invalid {
   border-radius: 50%;
   display: inline-block;
   opacity: 0.5;
+  box-shadow: inset 0 0 10px #3232ff;
 }
 
 .step.active {
   opacity: 1;
+  background-color: #637bd0;
 }
 
 .step.finish {
-  background-color: #4caf50;
+  background-color: #4a5b99;
 }
 
 /* ---------------------------------------------RADIO BUTTONS ---------------------------------------------*/
@@ -76,23 +78,30 @@ input.invalid {
 .radio-toolbar label {
   display: inline-block;
   background-color: #ddd;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   margin: 5px 0;
   font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  border: 2px solid #444;
-  border-radius: 4px;
+  /* font-size: 16px; */
+  /* border: 2px solid #444; */
+  border-radius: 3rem;
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 2px solid #ebfffb;
+  background: #ffffff;
 }
 
 .radio-toolbar input[type="radio"]:checked + label {
-  background-color: #4caf50;
-  border-color: #444;
+  background-color: #637bd0;
+  border-color: #637bd0;
 }
 
 .radio-toolbar input[type="radio"]:focus + label {
-  border: 2px dashed #444;
+  /* border: 2px dashed #444; */
 }
 
 .radio-toolbar input[type="radio"]:hover + label {
-  border: 2px dashed #aaaaaa;
+  /* border: 2px dashed #aaaaaa; */
 }
