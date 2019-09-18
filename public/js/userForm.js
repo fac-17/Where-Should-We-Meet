@@ -88,12 +88,43 @@ const validateRadio = () => {
   });
   if (valid === false) {
     error.innerText = "Please select one of these options!";
+    radioInputs.forEach(radioInput => radioInput.classList.add("invalid"));
   } else {
     error.innerText = "";
   }
   return valid;
 };
 
+const validateDateTime = () => {
+  let valid = true;
+  const inputArray = document.querySelectorAll(".user-input");
+  const error = inputArray[currentTab].querySelector(".error");
+  const dateInput = document.querySelector("#todaydate");
+  const timeInput = document.querySelector("#todaytime");
+  const dateNow = new Date();
+  var dateString = new Date(
+    dateNow.getTime() - dateNow.getTimezoneOffset() * 60000
+  )
+    .toISOString()
+    .split("T")[0];
+  console.log(dateInput.value, dateString);
+  if (dateInput.value < dateString) {
+    error.innerHTML = "Please enter a date in the future!";
+    dateInput.classList.add("invalid");
+    valid = false;
+  } else if (
+    timeInput.value < dateNow.getHours() + ":" + dateNow.getMinutes() &&
+    dateInput.value <= dateString
+  ) {
+    error.innerHTML = "Please enter a time in the future!";
+    timeInput.classList.add("invalid");
+    valid = false;
+  } else {
+    error.innerHTML = "";
+    valid = true;
+  }
+  return valid;
+};
 const nextInput = e => {
   e.preventDefault();
   const inputArray = document.querySelectorAll(".user-input");
@@ -101,6 +132,8 @@ const nextInput = e => {
   if (currentTab === 1 || currentTab === 3) {
     if (!validateEmpty()) return false;
     if (!validatePostcode()) return false;
+  } else if (currentTab === 4) {
+    if (!validateDateTime()) return false;
   } else if (currentTab === 5) {
     if (!validateRadio()) return false;
   } else {
