@@ -1,5 +1,5 @@
 const mainContainer = document.querySelector(".main-container");
-const containerSwipe = document.querySelector(".container-swipe");
+const containerSwipe = document.querySelector(".swipe-container");
 const childCount = containerSwipe.children.length;
 
 containerSwipe.style.setProperty("--n", childCount);

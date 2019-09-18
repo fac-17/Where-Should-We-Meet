@@ -10,7 +10,7 @@ const updateName = () => {
 };
 
 const showTab = n => {
-  const labelArray = document.querySelectorAll(".user-input");
+  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
   labelArray[n].style.display = "block";
 
   if (n === 0) {
@@ -41,7 +41,7 @@ const showTab = n => {
 showTab(currentTab);
 
 const validateEmpty = () => {
-  const labelArray = document.querySelectorAll(".user-input");
+  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
   let labelInput,
     valid = true;
 
@@ -58,7 +58,7 @@ const validateEmpty = () => {
 
 const validatePostcode = () => {
   let valid = true;
-  const labelArray = document.querySelectorAll(".user-input");
+  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
   const postcodeInput = labelArray[currentTab].querySelector(
     ".user-input-postcode"
   );
@@ -74,7 +74,7 @@ const validatePostcode = () => {
 
 const validateRadio = () => {
   let valid = false;
-  const labelArray = document.querySelectorAll(".user-input");
+  const labelArray = document.querySelectorAll("user-input-outer-wrap");
   const radioInputs = labelArray[currentTab].querySelectorAll(".radio-input");
   radioInputs.forEach(radioInput => {
     if (radioInput.checked) valid = true;
@@ -84,7 +84,7 @@ const validateRadio = () => {
 
 const nextInput = e => {
   e.preventDefault();
-  const labelArray = document.querySelectorAll(".user-input");
+  const labelArray = document.querySelectorAll(".user-input-outer-wrap");
   //validation
   if (currentTab === 1 || currentTab === 3) {
     if (!validatePostcode()) return false;
