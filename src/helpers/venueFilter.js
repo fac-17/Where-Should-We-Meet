@@ -6,8 +6,10 @@ const venueFilter = venuesArray => {
     );
     venueObject.location.display_address.pop(); //remove"united kingdom"
     let address = venueObject.location.display_address.join(", ");
-    address = address.replace(/London\s/gi, "");
+    let postcode = venueObject.location.zip_code;
+    address = address.replace(/London\s/gi, "").replace(/,[^,]*$/gi, "");
     newVenueObject.address = address;
+    newVenueObject.postcode = postcode;
     return newVenueObject;
   });
   return newVenueArray;

@@ -1,22 +1,23 @@
-  <h1>Pick your favourite venue</h1>
-  <div class="container-swipe">
-    {{#each venues}}
-    <div class="venue-box">
-      <div class="img-container"><img src="{{image_url}}"/></div>
-      <div>{{name}}</div>
-      <div class="stars">{{{starFinder rating}}}</div>
-      <div>{{address}}</div>
-      <div>{{price}}</div>
-    </div>
-    {{/each}}
+<h1>Pick your favourite venue</h1>
+<div class="container-swipe">
+  {{#each venues}}
+  <div class="venue-box">
+    <div class="img-container"><img src="{{image_url}}" /></div>
+    <div>{{name}}</div>
+    <div class="stars">{{{starFinder rating}}}</div>
+    <div>{{address}}</div>
+    <div>{{postcode}}</div>
+    <div>{{price}}</div>
   </div>
-  <div class=step-wrap>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-  </div>
-  <div class="heart-wrap uncolouredHeart"></div>
+  {{/each}}
+</div>
+<div class=step-wrap>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+</div>
+<div class="heart-wrap uncolouredHeart"></div>

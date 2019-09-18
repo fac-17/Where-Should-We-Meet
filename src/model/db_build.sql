@@ -12,8 +12,9 @@ CREATE TABLE User_A_input(
   timeInput VARCHAR(50) NOT NULL,
   venueType VARCHAR(50) NOT NULL, 
   jwToken VARCHAR NOT NULL UNIQUE, 
-  venueLongitude VARCHAR, 
-  venueLatitude VARCHAR
+  venueName VARCHAR,
+  venuePostcode VARCHAR,
+  venueAddress VARCHAR
 );
 
 INSERT INTO User_A_input(userA, postcodeA, userB, postcodeB, dateInput, timeInput, venueType, jwToken) VALUES
