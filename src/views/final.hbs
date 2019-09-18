@@ -7,22 +7,23 @@
         on<br>
         <span class="date">{{data.dateinput}}</span><br>
         at<br>
-        <span class="final-venu"></span>
+        <h2 class="venue-name">{{data.venuename}}</h2>
+        <div class="venue-address">{{data.venueaddress}}</div>
+        <div class="venue-postcode">{{data.venuepostcode}}</div>
         <span class="start-postcode" style="display:none">{{data.postcodea}}</span>
     </p>
-<div class="next-step-icon-wrap">
-    <a href="" target="_blank" class="link-citymapper"><img class="citymapper-logo"
-            src="./img/citymapper.png"
-            alt="Get directions with Citymapper" /></a>
+    <div class="next-step-icon-wrap">
+        <a href="" target="_blank" class="link-citymapper"><img class="citymapper-logo" src="./img/citymapper.png"
+                alt="Get directions with Citymapper" /></a>
 
-    <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn"> <i class="fa fa-calendar-o" aria-hidden="true"></i> Add to
-            Calendar</button>
-        <div id="myDropdown" class="dropdown-content">
-            <a href="#" class="fa fa-yahoo" aria-hidden="true" target="_blank"> Yahoo</a>
-            <a href="#" class="fa fa-google" aria-hidden="true" target="_blank"> Google</a>
-            <a href="#" class="fa fa-outlook" aria-hidden="true" target="_blank"> Outlook</a>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn"> <i class="fa fa-calendar-o" aria-hidden="true"></i> Add to
+                Calendar</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#" class="fa fa-yahoo" aria-hidden="true" target="_blank"> Yahoo</a>
+                <a href="#" class="fa fa-google" aria-hidden="true" target="_blank"> Google</a>
+                <a href="#" class="fa fa-outlook" aria-hidden="true" target="_blank"> Outlook</a>
+            </div>
         </div>
     </div>
-  </div>
 </main>
