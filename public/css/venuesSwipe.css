@@ -1,3 +1,4 @@
+/*---------------------------------GENERAL------------------------------------*/
 * {
   margin: 0;
 }
@@ -10,17 +11,8 @@ body {
   height: 100vh;
 }
 
-.img-container {
-  width: 100vw;
-  height: 40vh;
-  overflow: hidden;
-  position: relative;
-}
-.img-container img {
-  width: 100%;
-}
-
-.container-swipe {
+/*-----------------------------SWIPE CONTAINER--------------------------------*/
+.swipe-container {
   --n: 1;
   display: flex;
   align-items: space-between;
@@ -41,7 +33,18 @@ body {
   pointer-events: none;
 }
 
-/*----------------------------------STEPS-------------------------------------*/
+.venue-image-container {
+  width: 100vw;
+  height: 40vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.venue-image-container img {
+  width: 100%;
+}
+
+/*--------------------------STEPS/PAGINATION DOTS-----------------------------*/
 
 .step-wrap {
   display: flex;
@@ -88,7 +91,7 @@ body {
 }
 
 /*-----------------------------------STARS------------------------------------*/
-.stars img {
+.venue-rating-stars img {
   width: 50px;
   height: auto;
 }
