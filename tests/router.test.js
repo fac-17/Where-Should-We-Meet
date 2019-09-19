@@ -30,16 +30,16 @@ test("3. Check our form route works", t => {
     });
 });
 
-test("4. Check our venue route works", t => {
-  supertest(app)
-    .get("/venues")
-    .expect(200)
-    .expect("Content-type", /html/)
-    .end(err => {
-      t.error(err, "/venues route working");
-      t.end();
-    });
-});
+// test("4. Check our venue route works", t => {
+//   supertest(app)
+//     .get("/venues")
+//     .expect(200)
+//     .expect("Content-type", /html/)
+//     .end(err => {
+//       t.error(err, "/venues route working");
+//       t.end();
+//     });
+// });
 
 test("5. Check 404 route works", t => {
   supertest(app)
