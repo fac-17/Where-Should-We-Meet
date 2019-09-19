@@ -2,7 +2,7 @@
 
 Hi! Welcome to [Meet Me In The Middle](https://meet-me-in-the-middl.herokuapp.com/) - the web app that takes your location, takes your friend's location, and finds you a venue to meet at in the middle!
 
-## Our problem
+## Our problem 🤔
 
 Imagine this: your friend Chris lives in Mile End, and you live in Imperial Wharf. This journey takes you over an hour, but for Chris, it's just a fifteen minute walk to Brick Lane, where you're meeting. 
 
@@ -12,11 +12,11 @@ And, well, you can't really argue with Chris because you can't think of anywhere
 
 Wouldn't it be wonderful to have an app that allows you to input two postcodes, and in return gives you loads of great venues to meet at? Venues in the middle of both of you?
 
-Have we got you hooked? 
+**Have we got you hooked?** 🎣
 
 If so, you can find out more about the initial idea for this web app project by visiting the [Conception](https://github.com/fac-17/Where-Should-We-Meet/wiki/Conception) page in our wiki.
 
-## Team
+## Team 🤼
 
 - [@laleonie](https://github.com/LaLeonie) - DevOps Lead
 - [@sarahyjja](https://github.com/sarahyjja) - Scrum Master
@@ -26,6 +26,8 @@ If so, you can find out more about the initial idea for this web app project by 
 Find out more about the [team members](https://github.com/fac-17/Where-Should-We-Meet/wiki/Team) and their [roles](https://github.com/fac-17/Where-Should-We-Meet/wiki/Team-Roles) in this project. 
 
 ## Getting started
+
+To download our project:
 
     git clone git@github.com:fac-17/Where-Should-We-Meet.git
     
@@ -43,22 +45,16 @@ To run the project locally:
 
     npm start
 
-
-
-## Main user journey
-
-As a user, I want to find a convenient, suitable place to meet my friend in an easy and unanimous way.
-
 ## Tech stack
 
-- HTML5
-- CSS3
-- Handlebars
-- Express
-- Node.js
-- Javascript
-- Travis
-- Heroku
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+- [CSS3](https://www.w3.org/Style/CSS/)
+- [Handlebars](https://handlebarsjs.com/)
+- [Express](https://expressjs.com/)
+- [Node.js](https://nodejs.org/en/)
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Travis](https://travis-ci.com/)
+- [Heroku](https://dashboard.heroku.com/auth/heroku/callback?code=2361a308-2626-48fd-83d7-04437ae75efb)
 
 ## What we've done so far
 
