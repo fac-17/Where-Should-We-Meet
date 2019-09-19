@@ -9,6 +9,7 @@
   "scripts": {
     "start": "node src/server.js",
     "db_init": "node src/model/db_init.js",
+    "test_db_init": "NODE_ENV=test node src/model/db_init.js",
     "dev": "nodemon src/server.js",
     "test": "NODE_ENV=test tape tests/*test.js | tap-spec"
   },
