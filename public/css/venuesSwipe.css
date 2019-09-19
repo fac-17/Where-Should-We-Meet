@@ -100,11 +100,11 @@ body {
 /* -----------------------------SUBMIT----------------------------------------- */
 
 .venue-form-wrap{
-  display: none;
+  display: block;
 }
 .input-form-hidden{
   display: none;
 }
 .venue-submit-button{
-  display: none;
+  position: absolute;
 }

@@ -1,7 +1,7 @@
 const mainContainer = document.querySelector(".main-container");
 const containerSwipe = document.querySelector(".swipe-container");
 const childCount = containerSwipe.children.length;
-const heart = document.querySelector(".heart-wrap");
+// const heart = document.querySelector(".heart-wrap");
 
 containerSwipe.style.setProperty("--n", childCount);
 
@@ -26,12 +26,12 @@ const move = event => {
 };
 
 // On tap, toggle colour of heart
-heart.addEventListener("touchstart", (e) => {
-heart.classList.toggle("uncolouredHeart");
-console.log('event', e)
-console.log('event.target', e.target)
-heart.classList.toggle("colouredHeart");
-});
+// heart.addEventListener("touchstart", (e) => {
+// heart.classList.toggle("uncolouredHeart");
+// console.log('event', e)
+// console.log('event.target', e.target)
+// heart.classList.toggle("colouredHeart");
+// });
 
 
 containerSwipe.addEventListener("mousedown", lock, false);
