@@ -80,6 +80,7 @@ body {
   border-radius: 50%;
   border: 2px solid black;
   cursor: pointer;
+  z-index: 5;
 }
 
 .uncolouredHeart {
@@ -94,4 +95,16 @@ body {
 .venue-rating-stars img {
   width: 50px;
   height: auto;
+}
+
+/* -----------------------------SUBMIT----------------------------------------- */
+
+.venue-form-wrap{
+  display: none;
+}
+.input-form-hidden{
+  display: none;
+}
+.venue-submit-button{
+  display: none;
 }
