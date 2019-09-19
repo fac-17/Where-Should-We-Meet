@@ -33,6 +33,7 @@
 
 .user-input-title {
   font-family: "Righteous", cursive;
+  font-weight: normal;
 }
 
 .user-input::placeholder {
