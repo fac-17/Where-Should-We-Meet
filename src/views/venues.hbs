@@ -4,34 +4,34 @@
 
 </header>
 
-  <h1>Pick your favourite venue</h1>
+<h1>Pick your favourite venue</h1>
 
-  <div class="swipe-container">
-    {{#each venues}}
-    <div class="venue-box">
-      <div class="venue-image-container">
-        <img src="{{image_url}}"/>
-      </div>
-      <div>{{name}}</div>
-      <div class="venue-rating-stars">{{{starFinder rating}}}</div>
-      <div>{{address}}</div>
-      <div>{{postcode}}</div>
-      <div>{{price}}</div>
-      <form class="venue-form-wrap" action="/venuesubmit" method="POST">
-        <input class="input-form-hidden" type="text" name="venuename" value="{{name}}"/>
-        <input class="input-form-hidden" type="text" name="venueaddress" value="{{address}}"/>
-        <input class="input-form-hidden" type="text" name="venuepostcode" value="{{postcode}}"/>
-      </form>
+<div class="swipe-container">
+  {{#each venues}}
+  <div class="venue-box">
+    <div class="venue-image-container">
+      <img src="{{image_url}}" />
     </div>
-    {{/each}}
+    <div>{{name}}</div>
+    <div class="venue-rating-stars">{{{starFinder rating}}}</div>
+    <div>{{address}}</div>
+    <div>{{postcode}}</div>
+    <div>{{price}}</div>
+    <form class="venue-form-wrap" action="/venuesubmit" method="POST">
+      <input class="input-form-hidden" type="text" name="venuename" value="{{name}}" />
+      <input class="input-form-hidden" type="text" name="venueaddress" value="{{address}}" />
+      <input class="input-form-hidden" type="text" name="venuepostcode" value="{{postcode}}" />
+    </form>
   </div>
-  <button class="standard-button venue-submit-button"> Choose this venue</button>
-  <div class="step-wrap">
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-  </div>
+  {{/each}}
+</div>
+<button class="standard-button venue-submit-button"> Choose this venue</button>
+<div class="step-wrap">
+  <span class="step active"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+</div>

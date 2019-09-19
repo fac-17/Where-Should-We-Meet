@@ -1,6 +1,7 @@
 const mainContainer = document.querySelector(".main-container");
 const containerSwipe = document.querySelector(".swipe-container");
 const childCount = containerSwipe.children.length;
+const dotsArray = document.querySelectorAll(".step");
 
 containerSwipe.style.setProperty("--n", childCount);
 
@@ -23,8 +24,13 @@ const move = event => {
     if (
       (currentVenueIndex > 0 || sign < 0) &&
       (currentVenueIndex < childCount - 1 || sign > 0)
-    )
-      containerSwipe.style.setProperty("--i", (currentVenueIndex -= sign));
+    ) {
+      let newVenueIndex = currentVenueIndex - sign;
+      containerSwipe.style.setProperty("--i", newVenueIndex);
+      dotsArray[currentVenueIndex].classList.remove("active");
+      dotsArray[newVenueIndex].classList.add("active");
+      currentVenueIndex -= sign;
+    }
     x0 = null;
   }
 };
