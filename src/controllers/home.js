@@ -21,5 +21,11 @@ exports.get = (req, res) => {
         res.clearCookie("meetmecookie");
       }
     });
+  } else {
+    res.render("home", {
+      title: "home",
+      cssPath: "/css/homeStyle.css",
+      jsPath: "/js/home.js"
+    });
   }
 };
