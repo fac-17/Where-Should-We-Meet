@@ -10,8 +10,9 @@ const final = require("./final");
 router.get("/", home.get);
 router.get("/howitworks", howItWorks.get);
 router.get("/form", form.get);
-router.post("/form", form.post);
+router.post("/formsubmit", form.post);
 router.get("/venues", venues.get);
+router.post('/venuesubmit', venues.post)
 router.get("/final", final.get);
 
 module.exports = router;

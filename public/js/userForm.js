@@ -33,8 +33,13 @@ const showTab = n => {
     // PLACEHOLDER DATE AND TIME SET FOR TODAY AND CURRENT TIME
     const date = new Date();
     document.querySelector("#todaydate").valueAsDate = date;
-    document.querySelector("#todaytime").value =
-      date.getHours() + ":" + date.getMinutes();
+    if (date.getMinutes() < 10) {
+      document.querySelector("#todaytime").value =
+        date.getHours() + ":0" + date.getMinutes();
+    } else {
+      document.querySelector("#todaytime").value =
+        date.getHours() + ":" + date.getMinutes();
+    }
   }
   fixStepIndicator(n);
 };
