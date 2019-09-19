@@ -23,8 +23,4 @@ const venueFinder = (postcode1, postcode2) => {
       })
   );
 };
-//uncomment to test directly from node
-// venueFinder("SW1A 1AA", "WD3 8JN").then(array => {
-//   console.log(array));
-// });
 module.exports = venueFinder;

@@ -12,7 +12,6 @@ exports.get = (req, res) => {
     } else {
       getData(jwtToken, (err, result) => {
         const { postcodea, postcodeb } = result.rows[0];
-        console.log(postcodea, postcodeb);
         venueFinder(postcodea, postcodeb)
           .then(venuesArrayFromApi => {
             const filteredVenueArray = venueFilter(venuesArrayFromApi);
@@ -32,12 +31,8 @@ exports.get = (req, res) => {
 };
 
 exports.post = (req, res) => {
-  console.log("inside post function");
   const jwtToken = req.cookies.meetmecookie;
   const { venuename, venueaddress, venuepostcode } = req.body;
-  console.log("venuename", venuename);
-  console.log("venueaddress", venueaddress);
-  console.log("venuepostcode", venuepostcode);
   updateData(
     venuename,
     venuepostcode,
