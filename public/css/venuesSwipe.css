@@ -53,19 +53,20 @@ body {
 }
 
 .step {
-  position: relative;
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbbbbb;
+  background-color: #97a3cc;
   border: none;
   border-radius: 50%;
   display: inline-block;
-  opacity: 0.5;
+  /* opacity: 0.5; */
+  box-shadow: inset 0 0 5px #6375b3;
 }
 
 .step.active {
   opacity: 1;
+  background-color: #3b487a;
 }
 
 .step.finish {
@@ -99,11 +100,11 @@ body {
 
 /* -----------------------------SUBMIT----------------------------------------- */
 
-.venue-form-wrap{
+.venue-form-wrap {
   display: block;
 }
-.input-form-hidden{
+.input-form-hidden {
   display: none;
 }
-.venue-submit-button{
+.venue-submit-button {
 }
