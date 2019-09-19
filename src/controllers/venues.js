@@ -35,10 +35,13 @@ exports.post = (req, res) => {
   console.log("inside post function");
   const jwtToken = req.cookies.meetmecookie;
   const { venuename, venueaddress, venuepostcode } = req.body;
+  console.log("venuename", venuename);
+  console.log("venueaddress", venueaddress);
+  console.log("venuepostcode", venuepostcode);
   updateData(
     venuename,
-    venueaddress,
     venuepostcode,
+    venueaddress,
     jwtToken,
     (error, result) => {
       if (error) console.log(error);
