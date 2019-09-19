@@ -16,7 +16,3 @@ const venueFilter = venuesArray => {
 };
 
 module.exports = venueFilter;
-// venueArray = the whole array
-// the whole array is compose of N number of small object
-// we want to enter inside of the small objects
-// we want to iterate and return specific info
