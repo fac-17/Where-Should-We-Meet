@@ -73,7 +73,7 @@ const postcodeConverter = postcode =>
       return coords;
     })
     .catch(err => {
-      reject(err);
+      return err;
     });
 
 const routeFinder = (postcode1, postcode2) => {

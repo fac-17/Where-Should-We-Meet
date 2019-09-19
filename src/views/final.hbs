@@ -6,15 +6,12 @@
 
 <main>
   <h1>HURRAY!</h1>
-  <p class="highlight">You're meeting
+  <p class="highlight">You're meeting<br>
     <span class="userB">{{data.userb}}</span>
-  </p>
-  <p>at<br>
-    <span class="time">{{data.timeinput}}</span><br>
-    on<br>
-    <span class="date">{{data.dateinput}}</span><br>
-    at<br>
-    <span class="final-venu"></span>
+    <br>at<br><span class="venue-name">{{data.venuename}}</span><br>
+    <span class="venue-address" >{{data.venueaddress}}</span><br>
+    <span class="venue-postcode" >{{data.venuepostcode}}</span><br>
+    <span class="date">{{data.dateinput}}</span> | <span class="time">{{data.timeinput}}</span>
     <span class="start-postcode" style="display:none">{{data.postcodea}}</span>
   </p>
   <div class="next-step-icon-wrap">
