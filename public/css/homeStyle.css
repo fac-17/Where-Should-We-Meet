@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background: #64e291;
+  background: #31f0c8;
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
@@ -25,13 +25,14 @@ a:visited {
 }
 
 h1 {
-  font-family: Cookie, sans-serif;
+  font-family: Fredoka One;
   font-style: normal;
   font-weight: normal;
-  font-size: 4rem;
-  line-height: 83.2%;
+  font-size: 3rem;
+  line-height: 102.2%;
   text-align: center;
-  color: #ffffff;
+  color: #f4ca18;
+  border: 1px solid #ffffff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -50,15 +51,11 @@ p {
 .header-wrap {
   display: flex;
   flex-direction: row;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .header-button-wrap {
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid #fff;
-  border-radius: 20px/50px;
-  background-clip: padding-box;
   align-self: center;
 }
 
@@ -76,11 +73,11 @@ p {
 }
 
 .logo-name {
-  font-family: Livvic;
-  font-style: normal;
-  font-weight: 900;
+  font-family: Livvic, sans-serif;
+  /* font-style: normal;
+  font-weight: 900; */
   font-size: 1.3rem;
-  line-height: 102.9%;
+  /* line-height: 102.9%; */
   text-align: center;
   color: #ffffff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -169,12 +166,12 @@ p {
 
 .standard-button {
   padding: 1rem 1.2rem;
-  font-size: 2rem;
+  font-size: 1.4rem;
   cursor: pointer;
   border-radius: 3rem;
   margin: 0.5rem 0.5rem 1rem 0.5rem;
 
-  font-family: Cookie, sans-serif;
+  font-family: Fredoka One, sans-serif;
   align-items: center;
   text-align: center;
 
