@@ -12,6 +12,7 @@ const updateName = () => {
 const showTab = n => {
   const inputArray = document.querySelectorAll(".user-input-outer-wrap");
   inputArray[n].style.display = "block";
+  inputArray[n].style.flexDirection = "column";
 
   if (n === 0) {
     document.querySelector(".button-previous").style.display = "none";
