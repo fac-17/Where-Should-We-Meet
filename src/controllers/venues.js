@@ -30,3 +30,7 @@ exports.get = (req, res) => {
     }
   });
 };
+
+exports.post = (req, res) => {
+  const { venuename, venueaddress, venuepostcode } = req.body;
+};
