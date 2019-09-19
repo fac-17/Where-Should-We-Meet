@@ -17,10 +17,10 @@
       <div>{{address}}</div>
       <div>{{postcode}}</div>
       <div>{{price}}</div>
-      <form class="venue-form-wrap" action="">
-        <input class="input-form-hidden" type="text" value="{{name}}"/>
-        <input class="input-form-hidden" type="text" value="{{address}}"/>
-        <input class="input-form-hidden" type="text" value="{{postcode}}"/>
+      <form class="venue-form-wrap" action="/venuesubmit" method="POST">
+        <input class="input-form-hidden" type="text" name="venuename" value="{{name}}"/>
+        <input class="input-form-hidden" type="text" name="venueaddress" value="{{address}}"/>
+        <input class="input-form-hidden" type="text" name="venuepostcode" value="{{postcode}}"/>
       </form>
     </div>
     {{/each}}
