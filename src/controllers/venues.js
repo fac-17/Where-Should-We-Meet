@@ -1,11 +1,11 @@
 const getData = require("../model/queries/getData");
 const venueFinder = require("../helpers/venueFinder");
 const venueFilter = require("../helpers/venueFilter");
+const updateData = require("../model/queries/updateData");
 const jwt = require("jsonwebtoken");
 
 exports.get = (req, res) => {
   const jwtToken = req.cookies.meetmecookie;
-  console.log("jwt", jwtToken);
   jwt.verify(jwtToken, process.env.SECRET, (err, decodedvalues) => {
     if (err) {
       res.status(404).end();
@@ -32,5 +32,19 @@ exports.get = (req, res) => {
 };
 
 exports.post = (req, res) => {
+  console.log("inside post function");
+  const jwtToken = req.cookies.meetmecookie;
   const { venuename, venueaddress, venuepostcode } = req.body;
+  updateData(
+    venuename,
+    venueaddress,
+    venuepostcode,
+    jwtToken,
+    (error, result) => {
+      if (error) console.log(error);
+      else {
+        res.redirect("/final");
+      }
+    }
+  );
 };

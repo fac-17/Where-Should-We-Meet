@@ -20,7 +20,10 @@ const move = event => {
   if (x0 || x0 === 0) {
     let distanceX = unify(event).clientX - x0,
       sign = Math.sign(distanceX);
-    if ((currentVenueIndex > 0 || sign < 0) && (currentVenueIndex < childCount - 1 || sign > 0))
+    if (
+      (currentVenueIndex > 0 || sign < 0) &&
+      (currentVenueIndex < childCount - 1 || sign > 0)
+    )
       containerSwipe.style.setProperty("--i", (currentVenueIndex -= sign));
     x0 = null;
   }
@@ -41,11 +44,11 @@ containerSwipe.addEventListener(
 );
 
 // venue button
-let venueSubmitButton = document.querySelector('.venue-submit-button')
-let allVenueForm = document.querySelectorAll('.venue-form-wrap')
+let venueSubmitButton = document.querySelector(".venue-submit-button");
+let allVenueForm = document.querySelectorAll(".venue-form-wrap");
 
-let venueSubmitFunc = (event) => {
-  console.log('current form', allVenueForm[currentVenueIndex])
-}
+let venueSubmitFunc = event => {
+  allVenueForm[currentVenueIndex].submit();
+};
 
-venueSubmitButton.addEventListener('click', venueSubmitFunc)
+venueSubmitButton.addEventListener("click", venueSubmitFunc);
