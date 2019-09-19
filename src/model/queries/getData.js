@@ -1,6 +1,6 @@
 const db_connection = require("../db_connection");
 
-const getData = (cb, webToken) => {
+const getData = (webToken, cb) => {
   db_connection.query(
     "SELECT * FROM user_a_input WHERE jwToken=$1",
     [webToken],

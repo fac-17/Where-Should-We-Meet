@@ -20,14 +20,10 @@ const post = (req, res) => {
   } = req.body;
   const sessionDetails = {
     userName,
-    postcode,
-    friendName,
-    friendPostcode,
-    date,
-    time
+    eventCreated: true
   };
   const jwtToken = jwt.sign(sessionDetails, process.env.SECRET);
-  res.cookie("meetme-cookie", jwtToken);
+  res.cookie("meetmecookie", jwtToken);
   postData(
     userName,
     postcode,
