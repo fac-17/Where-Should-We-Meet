@@ -26,9 +26,10 @@ a:visited {
 
 /*----------------------------------HEADER------------------------------------*/
 
-header {
+.header-wrap {
   display: flex;
   flex-direction: row;
+  background-color: red;
 }
 
 .header-button-wrap {
@@ -63,6 +64,11 @@ header {
   height: 40px;
 }
 
+.popup-title {
+  font-family: "Righteous", cursive;
+  font-weight: normal;
+}
+
 /* ------------------------------ ALERT BOX ----------------------------------*/
 
 .popup-home-overlay {
@@ -76,6 +82,8 @@ header {
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .popup-home-overlay:target {
@@ -88,16 +96,16 @@ header {
   padding: 20px;
   background: #fff;
   border-radius: 5px;
-  width: 30%;
+  width: 70vw;
   position: relative;
   transition: all 5s ease-in-out;
 }
 
-.popup h2 {
+/* .popup h2 {
   margin-top: 0;
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
-}
+} */
 
 .popup .close {
   position: absolute;
@@ -114,8 +122,8 @@ header {
   color: #06d85f;
 }
 
-.popup .content {
-  max-height: 30%;
+.popup-content {
+  max-height: 100%;
   overflow: auto;
 }
 
