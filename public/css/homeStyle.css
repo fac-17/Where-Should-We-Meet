@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background: #ebfffb;
+  background: #64e291;
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
@@ -22,6 +22,27 @@ a {
 
 a:visited {
   color: black;
+}
+
+h1 {
+  font-family: Cookie, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 83.2%;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+p {
+  font-family: Livvic, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 145.6%;
+  text-align: center;
+  color: #ffffff;
 }
 
 /*----------------------------------HEADER------------------------------------*/
@@ -52,6 +73,17 @@ a:visited {
 .header-button-link-wrap {
   display: flex;
   flex-wrap: wrap;
+}
+
+.logo-name {
+  font-family: Livvic;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 102.9%;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .logo {
@@ -146,6 +178,21 @@ a:visited {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 0.5rem 0.5rem 2rem 0.5rem;
   font-family: "Montserrat", sans-serif;
+
+  font-family: Cookie, sans-serif;
+  font-size: 29px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+  background: #ffce00;
+  mix-blend-mode: normal;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
 }
 
 .standard-button:hover {
