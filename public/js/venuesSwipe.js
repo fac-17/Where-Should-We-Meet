@@ -4,6 +4,7 @@ const childCount = containerSwipe.children.length;
 
 containerSwipe.style.setProperty("--n", childCount);
 
+// swipe function
 function unify(event) {
   return event.changedTouches ? event.changedTouches[0] : event;
 }
@@ -13,13 +14,14 @@ const lock = event => {
   x0 = unify(event).clientX;
 };
 
-let i = 0;
+let currentVenueIndex = 0;
+
 const move = event => {
   if (x0 || x0 === 0) {
     let distanceX = unify(event).clientX - x0,
       sign = Math.sign(distanceX);
-    if ((i > 0 || sign < 0) && (i < childCount - 1 || sign > 0))
-      containerSwipe.style.setProperty("--i", (i -= sign));
+    if ((currentVenueIndex > 0 || sign < 0) && (currentVenueIndex < childCount - 1 || sign > 0))
+      containerSwipe.style.setProperty("--i", (currentVenueIndex -= sign));
     x0 = null;
   }
 };
@@ -37,3 +39,13 @@ containerSwipe.addEventListener(
   },
   false
 );
+
+// venue button
+let venueSubmitButton = document.querySelector('.venue-submit-button')
+let allVenueForm = document.querySelectorAll('.venue-form-wrap')
+
+let venueSubmitFunc = (event) => {
+  console.log('current form', allVenueForm[currentVenueIndex])
+}
+
+venueSubmitButton.addEventListener('click', venueSubmitFunc)
