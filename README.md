@@ -25,7 +25,7 @@ If so, you can find out more about the initial idea for this web app project by 
 
 Find out more about the [team members](https://github.com/fac-17/Where-Should-We-Meet/wiki/Team) and their [roles](https://github.com/fac-17/Where-Should-We-Meet/wiki/Team-Roles) in this project. 
 
-## Getting started
+## Getting started 🏁
 
 To download our project:
 
@@ -45,16 +45,9 @@ To run the project locally:
 
     npm start
 
-## Tech stack
+## Tech stuff 💻
 
-- [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
-- [CSS3](https://www.w3.org/Style/CSS/)
-- [Handlebars](https://handlebarsjs.com/)
-- [Express](https://expressjs.com/)
-- [Node.js](https://nodejs.org/en/)
-- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [Travis](https://travis-ci.com/)
-- [Heroku](https://dashboard.heroku.com/auth/heroku/callback?code=2361a308-2626-48fd-83d7-04437ae75efb)
+Read about what we're using and why in our [tech stack](https://github.com/fac-17/Where-Should-We-Meet/wiki/Tech-Stack) and our [dependencies](https://github.com/fac-17/Where-Should-We-Meet/wiki/Dependencies) sections in the wiki.
 
 ## What we've done so far
 
