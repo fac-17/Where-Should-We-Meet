@@ -3,13 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.user-form-inner-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100vw;
+  height: 85vh;
+  justify-content: space-around;
+  border: 2px solid black;
 }
 
 /*---------------------------- INPUT BOXES ------------------------------*/
@@ -28,8 +24,7 @@
   max-width: 20rem;
   font-size: 1.1rem;
   padding: 0.7rem;
-  text-align: center;
-  /*this keeps the text that user enters centered*/
+  text-align: center; /*this keeps the text that user enters centered*/
 }
 
 .user-input.invalid {
