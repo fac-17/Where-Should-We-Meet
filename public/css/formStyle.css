@@ -10,8 +10,9 @@
 
 /*---------------------------- INPUT BOXES ------------------------------*/
 .user-input-outer-wrap {
-  /*this is what hides each part of the form - don't remove!*/
+  /*this is what hides each part of the form - don't remove! (it's changed to display flex later)*/
   display: none;
+  align-items: center;
 }
 
 .user-input {
@@ -22,8 +23,8 @@
   font-family: Livvic, sans-serif;
   margin: 0 0 1.5rem 0;
   max-width: 20rem;
-  font-size: 1.1rem;
-  padding: 0.7rem;
+  font-size: 1.2rem;
+  padding: 1rem;
   text-align: center; /*this keeps the text that user enters centered*/
 }
 
@@ -32,6 +33,7 @@
 }
 
 .user-input-title {
+  max-width: 100%;
   font-family: Fredoka One, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -40,6 +42,7 @@
   text-align: center;
   color: #f4ca18;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 3rem;
   -webkit-text-stroke: 1px black;
 }
 
@@ -55,6 +58,7 @@
 }
 
 .error {
+  height: 1rem;
   color: #ff3a3a;
   font-family: Montserrat, sans-serif;
   font-style: normal;
