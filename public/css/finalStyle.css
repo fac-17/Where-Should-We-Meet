@@ -1,3 +1,25 @@
+.venue-name {
+  font-family: Livvic, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  /* line-height: 145.6%; */
+  text-align: center;
+  color: #ffffff;
+}
+.venue-address,
+.venue-postcode,
+.date,
+.time {
+  font-family: Livvic, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1rem;
+  /* line-height: 145.6%; */
+  text-align: center;
+  color: #ffffff;
+}
+
 /*-------------------------------BUTTON WRAP----------------------------------*/
 
 .next-step-icon-wrap {
@@ -17,12 +39,21 @@
 }
 
 .add-to-calander-button {
-  background-color: #637bd0;
-  border: 2px solid #5366aa;
-  color: #fff;
-  padding: 16px;
-  font-size: 16px;
+  padding: 1rem 1.2rem;
+  font-size: 1.4rem;
   cursor: pointer;
+  border-radius: 3rem;
+  margin: 0.5rem 0.5rem 1rem 0.5rem;
+
+  font-family: Fredoka One, sans-serif;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+  background: #ffce00;
+  mix-blend-mode: normal;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .add-to-calendar-dropdown-content {
@@ -45,7 +76,7 @@
   text-decoration: none;
   display: block;
   color: #4c4c4c;
-  font-family: "Montserrat", sans-serif;
+  font-family: Livvic, sans-serif;
 }
 
 .show {
