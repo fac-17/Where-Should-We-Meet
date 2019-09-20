@@ -5,9 +5,28 @@ html {
 }
 
 body {
-  background: #ebfffb;
+  background: #31f0c8;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 *,
@@ -24,21 +43,46 @@ a:visited {
   color: black;
 }
 
+h1 {
+  font-family: Fredoka One, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.5rem;
+  line-height: 102.2%;
+  text-align: center;
+  color: #f4ca18;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 1px black;
+  margin: 1rem auto;
+}
+
+p {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 145.6%;
+  text-align: center;
+  margin: 1rem auto;
+}
+
 /*----------------------------------HEADER------------------------------------*/
 
 .header-wrap {
   display: flex;
-  flex-direction: row;
-  background-color: red;
+  justify-content: space-between;
+}
+
+.header-logo-only {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30vh;
 }
 
 .header-button-wrap {
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid #fff;
-  border-radius: 20px/50px;
-  background-clip: padding-box;
   align-self: center;
+  margin: 20px;
 }
 
 .header-button-wrap:visited {
@@ -54,9 +98,20 @@ a:visited {
   flex-wrap: wrap;
 }
 
+.logo-name {
+  font-family: Livvic, sans-serif;
+  /* font-style: normal;
+  font-weight: 900; */
+  font-size: 1.3rem;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 1rem auto;
+}
+
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
 }
 
 .question-mark {
@@ -64,12 +119,23 @@ a:visited {
   height: 40px;
 }
 
-.popup-title {
-  font-family: "Righteous", cursive;
-  font-weight: normal;
+/* ------------------------------ MAIN ----------------------------------*/
+.main-wrap {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
-
 /* ------------------------------ ALERT BOX ----------------------------------*/
+.popup-title {
+  font-family: Fredoka One, sans-serif;
+  font-weight: lighter;
+  color: black;
+  font-size: 2rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 25px;
+}
 
 .popup-home-overlay {
   z-index: 1;
@@ -94,11 +160,13 @@ a:visited {
 .popup {
   margin: 70px auto;
   padding: 20px;
-  background: #fff;
+  background: #ffce00;
   border-radius: 5px;
   width: 70vw;
   position: relative;
   transition: all 5s ease-in-out;
+  font-family: Montserrat, sans-serif;
+  border: 3px solid #000000;
 }
 
 /* .popup h2 {
@@ -115,46 +183,112 @@ a:visited {
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: #ff3a3a;
 }
 
 .popup .close:hover {
-  color: #06d85f;
+  color: #31f0c8;
 }
 
 .popup-content {
   max-height: 100%;
   overflow: auto;
+  color: black;
 }
 
 .popup-yes-and-no {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  /* color: white; */
+}
+.popup-yes,
+.popup-no {
+  padding: 1rem 1.2rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: 3rem;
+  margin: 0.5rem 0.5rem 1rem 0.5rem;
+
+  font-family: Fredoka One, sans-serif;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+  mix-blend-mode: normal;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.popup-yes:hover {
+  background: #31f0c8;
+  color: white;
+}
+
+.popup-no:hover {
+  background: #ff3a3a;
+  color: white;
+}
 /* ------------------------------ BUTTONS ------------------------------------*/
 
 .standard-button {
-  background-color: #db3306;
-  color: #ffffff;
-  border: none;
-  padding: 1rem 1.2rem;
-  font-size: 1.05rem;
+  width: 8rem;
+  padding: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   border-radius: 3rem;
+  margin: 0.5rem 0.5rem 1rem 0.5rem;
+  font-family: Fredoka One, sans-serif;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  background: #ffce00;
+  mix-blend-mode: normal;
+  border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: 0.5rem 0.5rem 2rem 0.5rem;
-  font-family: "Montserrat", sans-serif;
 }
 
 .standard-button:hover {
   opacity: 0.8;
 }
-
+.learn-more {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  color: #000;
+  border: none;
+  background: none;
+}
+.button-nowrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .button-wrap {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* width: 100vw; */
+  /* margin-top: -100px; */
+}
+
+.highlight {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-size: 1.5rem;
+  /* line-height: 145.6%; */
+  text-align: center;
+  color: #000;
+  margin-bottom: 0px;
+}
+.userB {
+  font-family: Fredoka One, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3rem;
+  line-height: 102.2%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
