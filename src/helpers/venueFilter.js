@@ -10,6 +10,7 @@ const venueFilter = venuesArray => {
     address = address.replace(/London\s/gi, "").replace(/,[^,]*$/gi, "");
     newVenueObject.address = address;
     newVenueObject.postcode = postcode;
+    console.log(newVenueObject);
     return newVenueObject;
   });
   return newVenueArray;
