@@ -54,18 +54,19 @@ body {
 }
 
 .venue-info {
-  font-family: Livvic, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
-  font-weight: 500;
-  font-size: 1.1rem;
-  line-height: 145.6%;
+  font-weight: lighter;
+  font-size: 1.2rem;
+  /* line-height: 145.6%; */
   text-align: center;
-  color: #ffffff;
+  color: #000;
 }
 
 .venue-title {
   font-size: 1.5rem;
   padding-bottom: 5px;
+  font-weight: bolder;
 }
 
 /*--------------------------STEPS/PAGINATION DOTS-----------------------------*/
