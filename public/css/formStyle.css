@@ -32,14 +32,15 @@
 }
 
 .user-input-title {
-  font-family: Livvic, sans-serif;
-  font-size: 1.5rem;
-  line-height: 145.6%;
-  /* or 36px */
-  color: #f4ca18;
-  border: 1px solid #ffffff;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Fredoka One, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.4rem;
+  line-height: 102.2%;
   text-align: center;
+  color: #f4ca18;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 1px black;
 }
 
 .user-input::placeholder {
