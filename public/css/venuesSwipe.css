@@ -40,7 +40,7 @@ body {
   font-size: 1.4rem;
   padding-bottom: 5px;
   font-weight: bolder;
-  -webkit-text-stroke: 0.5px black;
+  -webkit-text-stroke: 0.2px black;
 }
 .venue-image-container {
   width: 100vw;
@@ -50,6 +50,7 @@ body {
   border-bottom: 5px solid black;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 20px;
+  display: flex;
 }
 
 .venue-image-container img {
@@ -79,6 +80,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  order: 5;
 }
 
 .step {

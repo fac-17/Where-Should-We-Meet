@@ -11,7 +11,7 @@ const updateName = () => {
 
 const showTab = n => {
   const inputArray = document.querySelectorAll(".user-input-outer-wrap");
-  inputArray[n].style.display = "block";
+  inputArray[n].style.display = "flex";
   inputArray[n].style.flexDirection = "column";
 
   if (n === 0) {
