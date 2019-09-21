@@ -1,6 +1,6 @@
 # Meet Me In The Middle 🌎
 
-Hi! 👋 Welcome to [Meet Me In The Middle](https://meet-me-in-the-middl.herokuapp.com/) - the web app that takes your 📍 location, takes your friend's 📍location, and finds you a venue to meet at in the middle!
+Hi! 👋 Welcome to [Meet Me In The Middle](https://meet-me-in-the-middl.herokuapp.com/) - the web app that takes your 📍 location, takes your friend's 📍location, and finds you a venue 🏛️ to meet at in the middle!
 
 ## Our problem 🤔
 
