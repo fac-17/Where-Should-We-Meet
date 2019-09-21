@@ -25,6 +25,8 @@
   font-size: 1rem;
   padding: 1rem;
   text-align: center; /*this keeps the text that user enters centered*/
+  border: 1px solid black;
+  border-radius: 2rem 2rem 3rem 3rem;
 }
 
 .user-input.invalid {
@@ -78,7 +80,7 @@
   margin: 0 2px;
   background-color: #f4ca18;
   border: 1px solid black;
-  border-radius: 50%;
+  border-radius: 18px 7px 12px 10px;
   display: inline-block;
   /* opacity: 0.5; */
   /* box-shadow: inset 0 0 5px #6375b3; */

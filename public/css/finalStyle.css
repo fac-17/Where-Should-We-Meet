@@ -11,6 +11,7 @@
   margin-bottom: 0px;
   margin-top: 5px;
 }
+
 .venue-address,
 .venue-postcode,
 .date,
@@ -18,18 +19,24 @@
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: lighter;
-  font-size: 1.5rem;
+  font-size: 1rem;
   /* line-height: 145.6%; */
   text-align: center;
   color: #000;
+}
+
+.venue-address {
+  font-size: 1.2rem;
 }
 
 /*-------------------------------BUTTON WRAP----------------------------------*/
 
 .next-step-icon-wrap {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 /*--------------------------ADD TO CALENDAR BUTTON ---------------------------*/
@@ -44,11 +51,11 @@
 
 .add-to-calander-button {
   padding: 1rem 1.2rem;
-  font-size: 1.4rem;
+  font-size: 1rem;
   cursor: pointer;
   border-radius: 3rem;
   margin: 0.5rem 0.5rem 1rem 0.5rem;
-
+  -webkit-text-stroke: 0.6px #545252;
   font-family: Fredoka One, sans-serif;
   align-items: center;
   text-align: center;
