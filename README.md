@@ -14,7 +14,7 @@ Wouldn't it be wonderful to have an app that allows you to input two postcodes, 
 
 **Have we got you hooked?** 🎣
 
-If so, you can find out more about the initial idea for this web app project by visiting the [Conception](https://github.com/fac-17/Where-Should-We-Meet/wiki/Conception) page in our wiki.
+If so, you can find out more about the initial idea for this web app project by visiting the [conception](https://github.com/fac-17/Where-Should-We-Meet/wiki/Conception) page in our wiki.
 
 ## Team 🤼
 
