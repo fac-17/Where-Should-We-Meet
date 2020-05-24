@@ -11,13 +11,14 @@ function unify(event) {
 }
 
 let x0 = null;
-const lock = event => {
+const lock = (event) => {
   x0 = unify(event).clientX;
 };
 
 let currentVenueIndex = 0;
+dotsArray[currentVenueIndex].classList.add("active");
 
-const move = event => {
+const move = (event) => {
   if (x0 || x0 === 0) {
     let distanceX = unify(event).clientX - x0,
       sign = Math.sign(distanceX);
@@ -43,7 +44,7 @@ containerSwipe.addEventListener("touchend", move, false);
 
 containerSwipe.addEventListener(
   "touchmove",
-  event => {
+  (event) => {
     event.preventDefault();
   },
   false
@@ -53,7 +54,7 @@ containerSwipe.addEventListener(
 let venueSubmitButton = document.querySelector(".venue-submit-button");
 let allVenueForm = document.querySelectorAll(".venue-form-wrap");
 
-let venueSubmitFunc = event => {
+let venueSubmitFunc = (event) => {
   allVenueForm[currentVenueIndex].submit();
 };
 
