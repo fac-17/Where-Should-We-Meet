@@ -57,11 +57,12 @@ h1 {
 }
 
 p {
+  width: 60vw;
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
-  line-height: 145.6%;
+  line-height: 1.5rem;
   text-align: center;
   margin: 1rem auto;
 }
@@ -112,6 +113,7 @@ p {
 .logo {
   width: 8.5vh;
   height: 8.5vh;
+  margin-top: 5vh;
 }
 
 .question-mark {
@@ -126,6 +128,7 @@ p {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 10vh;
 }
 /* ------------------------------ ALERT BOX ----------------------------------*/
 .popup-title {
@@ -150,8 +153,6 @@ p {
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
-  /* display: flex;
-  justify-content: center; */
 }
 
 .popup-home-overlay:target {
@@ -256,6 +257,7 @@ p {
 }
 .learn-more {
   font-family: Montserrat, sans-serif;
+  text-decoration: underline;
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
@@ -279,7 +281,7 @@ p {
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-size: 1.5rem;
-  /* line-height: 145.6%; */
+  line-height: 1.5rem;
   text-align: center;
   color: #000;
   margin-bottom: 0px;
