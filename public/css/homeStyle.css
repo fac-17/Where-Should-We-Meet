@@ -89,7 +89,7 @@ p {
 }
 .header-button-wrap {
   align-self: center;
-  margin: 20px;
+  margin: 0px 10px;
 }
 
 .header-button-wrap:visited {
