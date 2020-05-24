@@ -101,7 +101,11 @@ p {
 }
 
 .header-button-link-wrap {
+  height: 8.5vh;
+  width: 8.5vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -120,8 +124,8 @@ p {
 }
 
 .question-mark {
-  width: 5vh;
-  height: 5vh;
+  width: 6vh;
+  height: 6vh;
 }
 
 /* ------------------------------ MAIN ----------------------------------*/
