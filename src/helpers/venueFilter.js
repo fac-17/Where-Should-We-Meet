@@ -15,6 +15,8 @@ const venueFilter = (venuesArray) => {
     newVenueObject.postcode = postcode;
     return newVenueObject;
   });
+  //deletes extra elements and makes it an array of 10 venues
+  newVenueArray.length = 10;
   return newVenueArray;
 };
 
