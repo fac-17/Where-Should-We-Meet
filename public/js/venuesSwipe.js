@@ -5,12 +5,13 @@ const dotsArray = document.querySelectorAll(".step");
 
 containerSwipe.style.setProperty("--n", childCount);
 
-// swipe function
+// helper function to only take into account the touch point that was last changed.
 function unify(event) {
   return event.changedTouches ? event.changedTouches[0] : event;
 }
 
 let x0 = null;
+
 const lock = (event) => {
   x0 = unify(event).clientX;
 };
@@ -19,9 +20,9 @@ let currentVenueIndex = 0;
 dotsArray[currentVenueIndex].classList.add("active");
 
 const moveHandler = (event) => {
-  console.log(event.code);
+  event = unify(event);
   if ((event.clientX && x0) || x0 === 0) {
-    let distanceX = unify(event).clientX - x0,
+    let distanceX = event.clientX - x0,
       direction = Math.sign(distanceX);
     updateSlide(direction);
     x0 = null;
