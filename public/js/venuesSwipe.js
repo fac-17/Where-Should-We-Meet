@@ -18,29 +18,42 @@ const lock = (event) => {
 let currentVenueIndex = 0;
 dotsArray[currentVenueIndex].classList.add("active");
 
-const move = (event) => {
-  if (x0 || x0 === 0) {
+const moveHandler = (event) => {
+  console.log(event.code);
+  if ((event.clientX && x0) || x0 === 0) {
     let distanceX = unify(event).clientX - x0,
-      sign = Math.sign(distanceX);
-    if (
-      (currentVenueIndex > 0 || sign < 0) &&
-      (currentVenueIndex < childCount - 1 || sign > 0)
-    ) {
-      let newVenueIndex = currentVenueIndex - sign;
-      containerSwipe.style.setProperty("--i", newVenueIndex);
-      dotsArray[currentVenueIndex].classList.remove("active");
-      dotsArray[newVenueIndex].classList.add("active");
-      currentVenueIndex -= sign;
-    }
+      direction = Math.sign(distanceX);
+    updateSlide(direction);
     x0 = null;
+  } else if (event.code === "ArrowRight" || event.code === "ArrowLeft") {
+    let direction = event.code === "ArrowRight" ? -1 : 1;
+    updateSlide(direction);
+  } else {
+    return;
+  }
+};
+
+//direction -1 is right and +1 is left because swiping left should move the carousel one element right
+const updateSlide = (direction) => {
+  if (
+    (currentVenueIndex > 0 || direction < 0) &&
+    (currentVenueIndex < childCount - 1 || direction > 0)
+  ) {
+    let newVenueIndex = currentVenueIndex - direction;
+    containerSwipe.style.setProperty("--i", newVenueIndex);
+    dotsArray[currentVenueIndex].classList.remove("active");
+    dotsArray[newVenueIndex].classList.add("active");
+    currentVenueIndex -= direction;
   }
 };
 
 containerSwipe.addEventListener("mousedown", lock, false);
-containerSwipe.addEventListener("mouseup", move, false);
+containerSwipe.addEventListener("mouseup", moveHandler, false);
 
 containerSwipe.addEventListener("touchstart", lock, false);
-containerSwipe.addEventListener("touchend", move, false);
+containerSwipe.addEventListener("touchend", moveHandler, false);
+
+window.addEventListener("keydown", moveHandler, false);
 
 containerSwipe.addEventListener(
   "touchmove",
@@ -54,7 +67,7 @@ containerSwipe.addEventListener(
 let venueSubmitButton = document.querySelector(".venue-submit-button");
 let allVenueForm = document.querySelectorAll(".venue-form-wrap");
 
-let venueSubmitFunc = (event) => {
+let venueSubmitFunc = () => {
   allVenueForm[currentVenueIndex].submit();
 };
 
