@@ -123,3 +123,12 @@
   background-color: #f4ca18;
   border-color: black;
 }
+
+@media only screen and (max-width: 400px) {
+  .user-input-title {
+    font-size: 1.5rem;
+  }
+  .radio-toolbar label {
+    font-size: 12px;
+  }
+}
